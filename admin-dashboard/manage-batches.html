@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Manage Batches — Admin</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin">
+  <div id="site-header"></div>
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="brand"><img src="../assets/images/logos/logo-icon.svg" alt="logo"><div><strong>Coaching</strong><div class="muted">Admin</div></div></div>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="manage-courses.html">Manage Courses</a>
+        <a href="manage-students.html">Manage Students</a>
+        <a href="payments.html">Payments</a>
+        <a href="reports.html">Reports</a>
+        <a class="active" href="manage-batches.html">Manage Batches</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+    </aside>
+    <main class="admin-main">
+      <div class="admin-topbar"><h1>Manage Batches</h1><div class="topbar-actions"><button class="btn">+ New Batch</button></div></div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Batch</th><th>Course</th><th>Start Date</th><th>Seats</th><th>Actions</th></tr></thead>
+          <tbody>
+            <tr><td>Batch A</td><td>Python</td><td>2025-02-10</td><td>25</td><td class="actions"><button class="btn ghost">Edit</button><button class="btn">Close</button></td></tr>
+            <tr><td>Batch B</td><td>Fullstack</td><td>2025-03-01</td><td>30</td><td class="actions"><button class="btn ghost">Edit</button><button class="btn">Close</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+  <div id="site-footer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../assets/js/admin.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    fetch('../includes/header.html').then(r=>r.text()).then(t=>{document.getElementById('site-header').innerHTML=t; if(window.fixRootRelativePaths) window.fixRootRelativePaths();});
+    fetch('../includes/footer.html').then(r=>r.text()).then(t=>{document.getElementById('site-footer').innerHTML=t; if(window.fixRootRelativePaths) window.fixRootRelativePaths();});
+  </script>
+</body>
+</html>

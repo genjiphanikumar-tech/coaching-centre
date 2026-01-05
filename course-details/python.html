@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Data Science Course | Professional Coaching Institute</title>
+    <meta name="description" content="Master Python programming, data analysis, visualization, and machine learning. Become a Data Scientist or Python Developer in 14 weeks. Project-based learning with real datasets.">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/logos/logo-icon.svg">
+    <style>
+        /* Reuse course details styles from java.html */
+        .course-hero {
+            background: linear-gradient(135deg, var(--secondary-teal) 0%, var(--primary-blue) 100%);
+        }
+        
+        .course-hero-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--spacing-3xl);
+            align-items: center;
+        }
+        
+        .course-hero-text h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .course-tagline {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .course-hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .meta-item i {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .meta-item span {
+            font-weight: 500;
+        }
+        
+        .course-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+        }
+        
+        .course-hero-card {
+            background-color: white;
+            color: var(--gray-900);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .course-price {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .price-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-teal);
+            display: block;
+            line-height: 1;
+        }
+        
+        .price-note {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin-top: var(--spacing-xs);
+        }
+        
+        .course-includes {
+            list-style: none;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .course-includes li {
+            padding: var(--spacing-sm) 0;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            color: var(--gray-700);
+        }
+        
+        .course-includes i {
+            color: var(--success);
+        }
+        
+        .enroll-button {
+            width: 100%;
+        }
+        
+        /* Add Python-specific styles here */
+        .python-highlight {
+            background-color: #306998;
+            color: #FFD43B;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+        }
+        
+        .data-science-badge {
+            background-color: #4CC9F0;
+            color: white;
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .course-hero-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .course-hero-text h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Include -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- COURSE HERO SECTION -->
+        <section class="course-hero">
+            <div class="container">
+                <div class="course-hero-content">
+                    <div class="course-hero-text">
+                        <h1>Python Data Science & Analytics</h1>
+                        <p class="course-tagline">Master Python programming, data analysis, visualization, and machine learning for real-world business problems</p>
+                        
+                        <div class="course-hero-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>14 Weeks Program</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-signal"></i>
+                                <span>Beginner to Advanced</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-database"></i>
+                                <span>Real Datasets & Projects</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>Max 20 Students/Batch</span>
+                            </div>
+                        </div>
+                        
+                        <div class="course-hero-actions">
+                            <a href="#enroll" class="btn btn-primary btn-large">
+                                <i class="fas fa-rocket"></i> Enroll Now
+                            </a>
+                            <a href="../contact.html#counseling" class="btn btn-secondary btn-large">
+                                <i class="fas fa-calendar-check"></i> Book Free Demo
+                            </a>
+                            <a href="#curriculum" class="btn btn-outline btn-large" style="color: white; border-color: white;">
+                                <i class="fas fa-book-open"></i> View Curriculum
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="course-hero-card">
+                        <div class="course-price">
+                            <span class="price-amount">₹22,999</span>
+                            <span class="price-note">EMI available from ₹2,299/month</span>
+                        </div>
+                        
+                        <ul class="course-includes">
+                            <li><i class="fas fa-check-circle"></i> 140+ Hours Live Training</li>
+                            <li><i class="fas fa-check-circle"></i> 12+ Real-world Projects</li>
+                            <li><i class="fas fa-check-circle"></i> 1:1 Mentorship Sessions</li>
+                            <li><i class="fas fa-check-circle"></i> Career Support for 6 Months</li>
+                            <li><i class="fas fa-check-circle"></i> Certificate & Portfolio</li>
+                            <li><i class="fas fa-check-circle"></i> Dataset Library Access</li>
+                        </ul>
+                        
+                        <a href="#enroll" class="btn btn-primary enroll-button">
+                            <i class="fas fa-lock"></i> Secure Your Seat
+                        </a>
+                        
+                        <p class="text-center" style="margin-top: var(--spacing-md); font-size: 0.9rem; color: var(--gray-600);">
+                            <i class="fas fa-shield-alt"></i> 7-Day Money Back Guarantee
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COURSE TABS NAVIGATION -->
+        <nav class="course-tabs">
+            <div class="container">
+                <div class="tabs-container">
+                    <button class="course-tab active" data-tab="overview">Overview</button>
+                    <button class="course-tab" data-tab="curriculum">Curriculum</button>
+                    <button class="course-tab" data-tab="projects">Projects</button>
+                    <button class="course-tab" data-tab="career">Career Outcomes</button>
+                    <button class="course-tab" data-tab="instructors">Instructors</button>
+                    <button class="course-tab" data-tab="fees">Fees & Payment</button>
+                    <button class="course-tab" data-tab="faq">FAQ</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- COURSE CONTENT -->
+        <div class="course-content">
+            <!-- OVERVIEW TAB -->
+            <div id="overview" class="tab-content active">
+                <div class="container">
+                    <h2 class="section-title">Course Overview</h2>
+                    
+                    <div class="overview-grid">
+                        <div>
+                            <h3>Why Learn Python for Data Science?</h3>
+                            <p>Python has become the #1 language for data science and analytics. With its simplicity and powerful libraries, Python enables you to extract insights from data, build predictive models, and make data-driven decisions.</p>
+                            
+                            <p>This comprehensive program covers Python programming, data analysis with Pandas, visualization with Matplotlib & Seaborn, and machine learning with scikit-learn. You'll work with real datasets from industries like finance, healthcare, and e-commerce.</p>
+                            
+                            <h4 style="margin-top: var(--spacing-xl); margin-bottom: var(--spacing-md);">Ideal For:</h4>
+                            <ul class="ideal-for-list">
+                                <li><i class="fas fa-check"></i> Professionals switching to data science careers</li>
+                                <li><i class="fas fa-check"></i> Business analysts wanting to upgrade skills</li>
+                                <li><i class="fas fa-check"></i> Engineers & developers entering data field</li>
+                                <li><i class="fas fa-check"></i> Students preparing for data science roles</li>
+                                <li><i class="fas fa-check"></i> Entrepreneurs needing data analysis skills</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <div class="prerequisites-card">
+                                <h4><i class="fas fa-clipboard-check"></i> Prerequisites</h4>
+                                <ul class="prerequisites-list">
+                                    <li><i class="fas fa-laptop-code"></i> Basic computer knowledge</li>
+                                    <li><i class="fas fa-calculator"></i> Basic math understanding</li>
+                                    <li><i class="fas fa-brain"></i> Analytical thinking</li>
+                                    <li><i class="fas fa-clock"></i> 10-15 hours/week commitment</li>
+                                    <li><i class="fas fa-wifi"></i> Stable internet connection</li>
+                                </ul>
+                                <p style="margin-top: var(--spacing-md); font-size: 0.9rem; color: var(--gray-600);">
+                                    <i class="fas fa-info-circle"></i> No prior programming experience needed. We start from absolute basics.
+                                </p>
+                            </div>
+                            
+                            <div class="prerequisites-card" style="margin-top: var(--spacing-xl);">
+                                <h4><i class="fas fa-calendar-alt"></i> Next Batch Starts</h4>
+                                <p style="font-size: 1.25rem; font-weight: 600; color: var(--secondary-teal); margin-bottom: var(--spacing-sm);">22nd April 2024</p>
+                                <p style="color: var(--gray-600); margin-bottom: var(--spacing-md);">Limited to 20 students per batch</p>
+                                <a href="#enroll" class="btn btn-primary" style="width: 100%; background-color: var(--secondary-teal);">
+                                    <i class="fas fa-user-plus"></i> Reserve Your Seat
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-3xl);">
+                        <h3 class="section-title">Skills You Will Master</h3>
+                        
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4><i class="fab fa-python"></i> Python Programming</h4>
+                                <ul class="skill-list">
+                                    <li>Python Syntax & Data Types</li>
+                                    <li>Data Structures & Algorithms</li>
+                                    <li>Functions & Object-Oriented Programming</li>
+                                    <li>File Handling & Error Handling</li>
+                                    <li>Web Scraping with BeautifulSoup</li>
+                                    <li>Automation & Scripting</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4><i class="fas fa-chart-bar"></i> Data Analysis</h4>
+                                <ul class="skill-list">
+                                    <li>Data Cleaning & Preprocessing</li>
+                                    <li>Exploratory Data Analysis (EDA)</li>
+                                    <li>Statistical Analysis with NumPy</li>
+                                    <li>Data Manipulation with Pandas</li>
+                                    <li>Time Series Analysis</li>
+                                    <li>SQL for Data Analysis</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4><i class="fas fa-brain"></i> Machine Learning</h4>
+                                <ul class="skill-list">
+                                    <li>Supervised Learning Algorithms</li>
+                                    <li>Unsupervised Learning (Clustering)</li>
+                                    <li>Model Evaluation & Validation</li>
+                                    <li>Feature Engineering</li>
+                                    <li>Natural Language Processing Basics</li>
+                                    <li>Model Deployment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-3xl);">
+                        <h3 class="section-title">Tools & Technologies Covered</h3>
+                        
+                        <div class="tools-grid">
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <h4>Python 3.11</h4>
+                                <p>Latest Python version with all features</p>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-table"></i>
+                                </div>
+                                <h4>Pandas</h4>
+                                <p>Data manipulation & analysis library</p>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h4>Matplotlib</h4>
+                                <p>Data visualization library</p>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-seedling"></i>
+                                </div>
+                                <h4>scikit-learn</h4>
+                                <p>Machine learning library</p>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <h4>SQL</h4>
+                                <p>Database querying language</p>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+                                <h4>Jupyter Notebook</h4>
+                                <p>Interactive coding environment</p>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fab fa-git-alt"></i>
+                                </div>
+                                <h4>Git & GitHub</h4>
+                                <p>Version control for data projects</p>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                                <h4>Tableau</h4>
+                                <p>Business intelligence tool</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CURRICULUM TAB -->
+            <div id="curriculum" class="tab-content">
+                <div class="container">
+                    <h2 class="section-title">Detailed Curriculum</h2>
+                    
+                    <div class="course-structure-grid">
+                        <div>
+                            <h3>Course Structure</h3>
+                            <p>14-week comprehensive program with 4 phases. Each week includes 8-10 hours of live sessions, hands-on coding, and project work.</p>
+                            
+                            <div class="structure-card">
+                                <h4><i class="fas fa-calendar-week"></i> Weekly Schedule</h4>
+                                <ul class="structure-list">
+                                    <li><strong>Monday & Wednesday:</strong> Live theory sessions (7-9 PM)</li>
+                                    <li><strong>Tuesday & Thursday:</strong> Hands-on coding labs</li>
+                                    <li><strong>Friday:</strong> Dataset analysis & projects</li>
+                                    <li><strong>Saturday:</strong> Weekly assignment submission</li>
+                                    <li><strong>Sunday:</strong> Optional review sessions</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="structure-card" style="margin-top: var(--spacing-xl);">
+                                <h4><i class="fas fa-chart-pie"></i> Learning Methodology</h4>
+                                <ul class="structure-list">
+                                    <li>25% Theory & Concepts</li>
+                                    <li>35% Hands-on Data Analysis</li>
+                                    <li>25% Project Development</li>
+                                    <li>15% Case Studies & Business Applications</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3>Batch Details</h3>
+                            
+                            <div class="structure-card">
+                                <h4><i class="fas fa-users"></i> Batch Information</h4>
+                                <ul class="structure-list">
+                                    <li><strong>Batch Size:</strong> Max 20 students</li>
+                                    <li><strong>Duration:</strong> 14 weeks (3.5 months)</li>
+                                    <li><strong>Total Hours:</strong> 140+ live hours</li>
+                                    <li><strong>Mode:</strong> Online Live + Recordings</li>
+                                    <li><strong>Timing:</strong> 7-9 PM (Mon, Wed, Fri)</li>
+                                    <li><strong>Start Date:</strong> 22nd April 2024</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-3xl);">
+                        <h3 class="section-title">Module Breakdown</h3>
+                        
+                        <div class="module-accordion">
+                            <!-- Phase 1 -->
+                            <div class="module-item">
+                                <div class="module-header">
+                                    <h5>PHASE 1: Python Programming Foundation (Weeks 1-4)</h5>
+                                    <span class="module-duration">40 Hours</span>
+                                </div>
+                                <div class="module-content">
+                                    <h6>Learning Objectives:</h6>
+                                    <p>Master Python syntax, data structures, and programming fundamentals for data science.</p>
+                                    
+                                    <h6 style="margin-top: var(--spacing-lg);">Topics Covered:</h6>
+                                    <ul class="topics-list">
+                                        <li><i class="fas fa-angle-right"></i> Python Basics & Data Types</li>
+                                        <li><i class="fas fa-angle-right"></i> Control Flow & Functions</li>
+                                        <li><i class="fas fa-angle-right"></i> Data Structures (Lists, Dictionaries)</li>
+                                        <li><i class="fas fa-angle-right"></i> Object-Oriented Programming</li>
+                                        <li><i class="fas fa-angle-right"></i> File Handling & Error Handling</li>
+                                        <li><i class="fas fa-angle-right"></i> Regular Expressions</li>
+                                        <li><i class="fas fa-angle-right"></i> Web Scraping Basics</li>
+                                        <li><i class="fas fa-angle-right"></i> Working with APIs</li>
+                                    </ul>
+                                    
+                                    <h6 style="margin-top: var(--spacing-lg);">Projects:</h6>
+                                    <ul class="topics-list">
+                                        <li><i class="fas fa-project-diagram"></i> Data Collection & Cleaning Script</li>
+                                        <li><i class="fas fa-project-diagram"></i> Automation Tool Development</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Phase 2 -->
+                            <div class="module-item">
+                                <div class="module-header">
+                                    <h5>PHASE 2: Data Analysis & Visualization (Weeks 5-8)</h5>
+                                    <span class="module-duration">45 Hours</span>
+                                </div>
+                                <div class="module-content">
+                                    <h6>Learning Objectives:</h6>
+                                    <p>Learn data manipulation, exploratory analysis, and visualization techniques.</p>
+                                    
+                                    <h6 style="margin-top: var(--spacing-lg);">Topics Covered:</h6>
+                                    <ul class="topics-list">
+                                        <li><i class="fas fa-angle-right"></i> NumPy for Numerical Computing</li>
+                                        <li><i class="fas fa-angle-right"></i> Pandas for Data Manipulation</li>
+                                        <li><i class="fas fa-angle-right"></i> Data Cleaning & Preprocessing</li>
+                                        <li><i class="fas fa-angle-right"></i> Exploratory Data Analysis (EDA)</li>
+                                        <li><i class="fas fa-angle-right"></i> Statistical Analysis</li>
+                                        <li><i class="fas fa-angle-right"></i> Matplotlib & Seaborn Visualization</li>
+                                        <li><i class="fas fa-angle-right"></i> Time Series Analysis</li>
+                                        <li><i class="fas fa-angle-right"></i> SQL for Data Analysis</li>
+                                    </ul>
+                                    
+                                    <h6 style="margin-top: var(--spacing-lg);">Projects:</h6>
+                                    <ul class="topics-list">
+                                        <li><i class="fas fa-project-diagram"></i> Sales Data Analysis Dashboard</li>
+                                        <li><i class="fas fa-project-diagram"></i> Customer Behavior Analysis</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Phase 3 -->
+                            <div class="module-item">
+                                <div class="module-header">
+                                    <h5>PHASE 3: Machine Learning Fundamentals (Weeks 9-12)</h5>
+                                    <span class="module-duration">40 Hours</span>
+                                </div>
+                                <div class="module-content">
+                                    <h6>Learning Objectives:</h6>
+                                    <p>Understand ML algorithms, model building, evaluation, and deployment.</p>
+                                    
+                                    <h6 style="margin-top: var(--spacing-lg);">Topics Covered:</h6>
+                                    <ul class="topics-list">
+                                        <li><i class="fas fa-angle-right"></i> Introduction to Machine Learning</li>
+                                        <li><i class="fas fa-angle-right"></i> Linear & Logistic Regression</li>
+                                        <li><i class="fas fa-angle-right"></i> Decision Trees & Random Forests</li>
+                                        <li><i class="fas fa-angle-right"></i> Clustering Algorithms (K-means)</li>
+                                        <li><i class="fas fa-angle-right"></i> Model Evaluation Metrics</li>
+                                        <li><i class="fas fa-angle-right"></i> Feature Engineering</li>
+                                        <li><i class="fas fa-angle-right"></i> Hyperparameter Tuning</li>
+                                        <li><i class="fas fa-angle-right"></i> Cross-Validation Techniques</li>
+                                    </ul>
+                                    
+                                    <h6 style="margin-top: var(--spacing-lg);">Projects:</h6>
+                                    <ul class="topics-list">
+                                        <li><i class="fas fa-project-diagram"></i> Sales Prediction Model</li>
+                                        <li><i class="fas fa-project-diagram"></i> Customer Segmentation Analysis</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Phase 4 -->
+                            <div class="module-item">
+                                <div class="module-header">
+                                    <h5>PHASE 4: Advanced Topics & Capstone (Weeks 13-14)</h5>
+                                    <span class="module-duration">20 Hours</span>
+                                </div>
+                                <div class="module-content">
+                                    <h6>Learning Objectives:</h6>
+                                    <p>Work on advanced topics and complete an end-to-end data science project.</p>
+                                    
+                                    <h6 style="margin-top: var(--spacing-lg);">Topics Covered:</h6>
+                                    <ul class="topics-list">
+                                        <li><i class="fas fa-angle-right"></i> Natural Language Processing Basics</li>
+                                        <li><i class="fas fa-angle-right"></i> Introduction to Deep Learning</li>
+                                        <li><i class="fas fa-angle-right"></i> Model Deployment Strategies</li>
+                                        <li><i class="fas fa-angle-right"></i> Dashboard Creation with Tableau</li>
+                                        <li><i class="fas fa-angle-right"></i> Big Data Concepts</li>
+                                        <li><i class="fas fa-angle-right"></i> Data Science Best Practices</li>
+                                        <li><i class="fas fa-angle-right"></i> Portfolio Preparation</li>
+                                        <li><i class="fas fa-angle-right"></i> Interview Preparation</li>
+                                    </ul>
+                                    
+                                    <h6 style="margin-top: var(--spacing-lg);">Projects:</h6>
+                                    <ul class="topics-list">
+                                        <li><i class="fas fa-project-diagram"></i> End-to-End Data Science Project</li>
+                                        <li><i class="fas fa-project-diagram"></i> Business Intelligence Dashboard</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECTS TAB -->
+            <div id="projects" class="tab-content">
+                <div class="container">
+                    <h2 class="section-title">Hands-On Projects</h2>
+                    <p style="margin-bottom: var(--spacing-xl);">Build a portfolio of 8+ data science projects using real datasets from various industries.</p>
+                    
+                    <div class="project-card">
+                        <h4><i class="fas fa-store"></i> E-commerce Sales Analysis (Capstone Project)</h4>
+                        <p>Analyze 2 years of e-commerce data to identify sales trends, customer behavior, and product performance. Build predictive models for sales forecasting.</p>
+                        
+                        <div class="project-features">
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Data Cleaning & Preprocessing</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Exploratory Data Analysis</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Time Series Forecasting</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Customer Segmentation</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Interactive Dashboard</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Business Recommendations</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h4><i class="fas fa-heartbeat"></i> Healthcare Data Analysis</h4>
+                        <p>Analyze patient data to identify disease patterns, treatment effectiveness, and hospital readmission rates. Build models for early disease detection.</p>
+                        
+                        <div class="project-features">
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Medical Data Processing</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Statistical Analysis</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Predictive Modeling</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Ethical Considerations</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h4><i class="fas fa-money-bill-wave"></i> Financial Data Analysis</h4>
+                        <p>Work with stock market data to analyze trends, build trading indicators, and create portfolio optimization models.</p>
+                        
+                        <div class="project-features">
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Financial Data Collection</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Technical Analysis</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Risk Assessment Models</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h4><i class="fas fa-comments"></i> Social Media Sentiment Analysis</h4>
+                        <p>Analyze Twitter/Facebook data to understand public sentiment about products, brands, or political events using NLP techniques.</p>
+                        
+                        <div class="project-features">
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Text Data Processing</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Natural Language Processing</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Sentiment Classification</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-3xl);">
+                        <h3 class="section-title">Dataset Library</h3>
+                        <div class="structure-card">
+                            <h4><i class="fas fa-database"></i> Real Datasets You'll Work With</h4>
+                            <ul class="structure-list">
+                                <li><strong>Sales & Retail:</strong> E-commerce transactions, customer behavior</li>
+                                <li><strong>Healthcare:</strong> Patient records, medical test results</li>
+                                <li><strong>Finance:</strong> Stock prices, cryptocurrency data</li>
+                                <li><strong>Social Media:</strong> Twitter sentiment, Facebook engagement</li>
+                                <li><strong>Real Estate:</strong> Property prices, market trends</li>
+                                <li><strong>Sports Analytics:</strong> Player performance, match statistics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CAREER TAB -->
+            <div id="career" class="tab-content">
+                <div class="container">
+                    <h2 class="section-title">Career Outcomes</h2>
+                    <p style="margin-bottom: var(--spacing-xl);">Data science is one of the fastest-growing fields with high demand across industries.</p>
+                    
+                    <div class="job-roles-grid">
+                        <div class="job-role-card">
+                            <div class="job-role-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Data Analyst</h4>
+                            <p>Collect, process, and analyze data to help businesses make informed decisions.</p>
+                        </div>
+                        
+                        <div class="job-role-card">
+                            <div class="job-role-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4>Data Scientist</h4>
+                            <p>Build predictive models and machine learning algorithms to solve complex problems.</p>
+                        </div>
+                        
+                        <div class="job-role-card">
+                            <div class="job-role-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h4>Business Analyst</h4>
+                            <p>Use data to identify business opportunities and improve processes.</p>
+                        </div>
+                        
+                        <div class="job-role-card">
+                            <div class="job-role-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4>Python Developer</h4>
+                            <p>Develop applications and automation tools using Python programming.</p>
+                        </div>
+                        
+                        <div class="job-role-card">
+                            <div class="job-role-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h4>Analytics Consultant</h4>
+                            <p>Advise businesses on data strategy and implementation.</p>
+                        </div>
+                        
+                        <div class="job-role-card">
+                            <div class="job-role-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h4>Research Analyst</h4>
+                            <p>Conduct market research and competitive analysis using data.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="salary-info">
+                        <h3>Salary Expectations</h3>
+                        <p>Data science professionals command some of the highest salaries in tech. Here are typical ranges:</p>
+                        
+                        <div class="salary-ranges">
+                            <div class="salary-range">
+                                <div class="range-label">Fresher (0-1 years)</div>
+                                <div class="range-amount">₹5-8 LPA</div>
+                            </div>
+                            
+                            <div class="salary-range">
+                                <div class="range-label">Mid-Level (2-4 years)</div>
+                                <div class="range-amount">₹10-20 LPA</div>
+                            </div>
+                            
+                            <div class="salary-range">
+                                <div class="range-label">Senior (5+ years)</div>
+                                <div class="range-amount">₹20-40+ LPA</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-3xl);">
+                        <h3 class="section-title">Our Career Support Services</h3>
+                        
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4><i class="fas fa-file-alt"></i> Portfolio Building</h4>
+                                <ul class="skill-list">
+                                    <li>GitHub profile optimization</li>
+                                    <li>Project documentation</li>
+                                    <li>Jupyter notebook best practices</li>
+                                    <li>Data storytelling techniques</li>
+                                    <li>Case study preparation</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4><i class="fas fa-comments"></i> Interview Preparation</h4>
+                                <ul class="skill-list">
+                                    <li>Data science interview questions</li>
+                                    <li>SQL query practice</li>
+                                    <li>Python coding challenges</li>
+                                    <li>Statistics & probability questions</li>
+                                    <li>Case study interviews</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4><i class="fas fa-briefcase"></i> Job Search Support</h4>
+                                <ul class="skill-list">
+                                    <li>Industry networking guidance</li>
+                                    <li>LinkedIn optimization for data roles</li>
+                                    <li>Kaggle competition strategy</li>
+                                    <li>Freelance project opportunities</li>
+                                    <li>Referral program access</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INSTRUCTORS TAB -->
+            <div id="instructors" class="tab-content">
+                <div class="container">
+                    <h2 class="section-title">Meet Your Instructors</h2>
+                    
+                    <div class="mentor-profiles">
+                        <div class="mentor-profile">
+                            <div class="mentor-image">
+                                <img src="../assets/images/instructors/mentor-2.svg" alt="Priya Sharma - Data Science Mentor" loading="lazy">
+                            </div>
+                            <div class="mentor-info">
+                                <h3>Priya Sharma</h3>
+                                <p class="mentor-title">Senior Data Scientist & Lead Instructor</p>
+                                <div class="mentor-experience">
+                                    <span><i class="fas fa-briefcase"></i> 8 years industry experience</span>
+                                    <span><i class="fas fa-building"></i> Previously at AnalyticsPro</span>
+                                </div>
+                                <p class="mentor-bio">Priya specializes in machine learning, statistical analysis, and business intelligence. She has worked on predictive modeling projects for e-commerce, healthcare, and finance domains. Her teaching focuses on practical applications.</p>
+                                <div class="mentor-expertise">
+                                    <span class="expertise-tag">Python</span>
+                                    <span class="expertise-tag">Machine Learning</span>
+                                    <span class="expertise-tag">Statistics</span>
+                                    <span class="expertise-tag">Tableau</span>
+                                    <span class="expertise-tag">Business Analytics</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mentor-profile">
+                            <div class="mentor-image">
+                                <img src="../assets/images/instructors/mentor-4.svg" alt="Rahul Verma - Python Mentor" loading="lazy">
+                            </div>
+                            <div class="mentor-info">
+                                <h3>Rahul Verma</h3>
+                                <p class="mentor-title">Python Expert & Data Analyst</p>
+                                <div class="mentor-experience">
+                                    <span><i class="fas fa-briefcase"></i> 6 years experience</span>
+                                    <span><i class="fas fa-building"></i> Currently at DataFirst Solutions</span>
+                                </div>
+                                <p class="mentor-bio">Rahul specializes in data analysis, visualization, and automation. He has extensive experience in building data pipelines and creating insightful dashboards for business stakeholders.</p>
+                                <div class="mentor-expertise">
+                                    <span class="expertise-tag">Pandas</span>
+                                    <span class="expertise-tag">Data Visualization</span>
+                                    <span class="expertise-tag">SQL</span>
+                                    <span class="expertise-tag">Automation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FEES TAB -->
+            <div id="fees" class="tab-content">
+                <div class="container">
+                    <h2 class="section-title">Fee Structure & Payment Options</h2>
+                    
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <h4>Full Payment</h4>
+                            <div class="payment-price">₹22,999</div>
+                            <p class="payment-note">One-time payment</p>
+                            
+                            <ul class="included-features">
+                                <li><i class="fas fa-check"></i> Save ₹2,000</li>
+                                <li><i class="fas fa-check"></i> Immediate access</li>
+                                <li><i class="fas fa-check"></i> All features included</li>
+                            </ul>
+                            
+                            <a href="#enroll" class="btn btn-primary" style="width: 100%; background-color: var(--secondary-teal);">
+                                <i class="fas fa-lock"></i> Pay Now
+                            </a>
+                        </div>
+                        
+                        <div class="payment-option featured">
+                            <div class="payment-badge">Most Popular</div>
+                            <h4>EMI Option</h4>
+                            <div class="payment-price">₹2,299/mo</div>
+                            <p class="payment-note">For 10 months (Total: ₹22,990)</p>
+                            
+                            <ul class="included-features">
+                                <li><i class="fas fa-check"></i> No cost EMI</li>
+                                <li><i class="fas fa-check"></i> Instant approval</li>
+                                <li><i class="fas fa-check"></i> All features included</li>
+                                <li><i class="fas fa-check"></i> Credit card/loan options</li>
+                            </ul>
+                            
+                            <a href="#enroll" class="btn btn-primary" style="width: 100%; background-color: var(--secondary-teal);">
+                                <i class="fas fa-credit-card"></i> Start EMI
+                            </a>
+                        </div>
+                        
+                        <div class="payment-option">
+                            <h4>Installment Plan</h4>
+                            <div class="payment-price">₹8,333 × 3</div>
+                            <p class="payment-note">Monthly installments</p>
+                            
+                            <ul class="included-features">
+                                <li><i class="fas fa-check"></i> 3 easy payments</li>
+                                <li><i class="fas fa-check"></i> No interest</li>
+                                <li><i class="fas fa-check"></i> All features included</li>
+                            </ul>
+                            
+                            <a href="#enroll" class="btn btn-primary" style="width: 100%; background-color: var(--secondary-teal);">
+                                <i class="fas fa-calendar-alt"></i> Pay in Parts
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-3xl);">
+                        <h3 class="section-title">What's Included in the Fee</h3>
+                        
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4><i class="fas fa-chalkboard-teacher"></i> Learning Resources</h4>
+                                <ul class="skill-list">
+                                    <li>140+ hours live training</li>
+                                    <li>All class recordings</li>
+                                    <li>Course notes & code samples</li>
+                                    <li>Dataset library access</li>
+                                    <li>E-books & reference materials</li>
+                                    <li>Premium tool licenses</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4><i class="fas fa-hands-helping"></i> Support & Mentorship</h4>
+                                <ul class="skill-list">
+                                    <li>1:1 doubt resolution</li>
+                                    <li>Weekly project reviews</li>
+                                    <li>Career counseling sessions</li>
+                                    <li>Interview preparation</li>
+                                    <li>Code review & feedback</li>
+                                    <li>6 months post-course support</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4><i class="fas fa-award"></i> Certification & Benefits</h4>
+                                <ul class="skill-list">
+                                    <li>Course completion certificate</li>
+                                    <li>Project excellence certificates</li>
+                                    <li>LinkedIn recommendation</li>
+                                    <li>Job referral program</li>
+                                    <li>Alumni community access</li>
+                                    <li>Networking events</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ TAB -->
+            <div id="faq" class="tab-content">
+                <div class="container">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    
+                    <div class="module-accordion">
+                        <div class="module-item">
+                            <div class="module-header">
+                                <h5>Do I need strong math skills for this course?</h5>
+                            </div>
+                            <div class="module-content">
+                                <p>Basic math understanding is helpful, but we cover all necessary statistical concepts during the course. We focus on practical application rather than complex mathematics.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="module-item">
+                            <div class="module-header">
+                                <h5>What kind of datasets will I work with?</h5>
+                            </div>
+                            <div class="module-content">
+                                <p>You'll work with real datasets from various industries including e-commerce sales, healthcare records, financial data, social media, and more. All datasets are provided as part of the course.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="module-item">
+                            <div class="module-header">
+                                <h5>Will I learn SQL in this course?</h5>
+                            </div>
+                            <div class="module-content">
+                                <p>Yes, we cover SQL fundamentals for data extraction and analysis. You'll learn how to query databases and integrate SQL with Python for data analysis.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="module-item">
+                            <div class="module-header">
+                                <h5>What software/tools do I need?</h5>
+                            </div>
+                            <div class="module-content">
+                                <p>We'll guide you through installing Python, Jupyter Notebook, and necessary libraries. All software is free and open-source. A computer with 8GB RAM is recommended.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="module-item">
+                            <div class="module-header">
+                                <h5>Is this course suitable for working professionals?</h5>
+                            </div>
+                            <div class="module-content">
+                                <p>Yes, the course schedule (evenings and weekends) is designed for working professionals. Recordings are available if you miss any session.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="module-item">
+                            <div class="module-header">
+                                <h5>What kind of projects will I build?</h5>
+                            </div>
+                            <div class="module-content">
+                                <p>You'll build 8+ projects including sales analysis, customer segmentation, predictive modeling, sentiment analysis, and a capstone project on a real business problem.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FINAL ENROLLMENT CTA -->
+        <section id="enroll" class="final-cta-course">
+            <div class="container">
+                <div class="cta-course-content">
+                    <h2>Start Your Data Science Journey Today</h2>
+                    <p>Join our next batch starting on <strong>4th January 2026</strong>. Limited seats available for personalized attention.</p>
+                    
+                    <div class="cta-course-actions">
+                        <a href="../contact.html#counseling" class="btn btn-primary btn-xlarge">
+                            <i class="fas fa-calendar-check"></i> Book Free Demo Class
+                        </a>
+                        <a href="tel:+91 8885570870" class="btn btn-secondary btn-xlarge">
+                            <i class="fas fa-phone-alt"></i> Call for Admission
+                        </a>
+                        <a href="https://wa.me/911234567890?text=I'm interested in Python Data Science course" class="btn btn-whatsapp btn-xlarge" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Include -->
+    <div id="footer-placeholder"></div>
+
+    <!-- CTA Banner Include -->
+    <div id="cta-banner-placeholder"></div>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load header
+            fetch('../includes/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                    initializeMobileMenu();
+                    if (typeof fixRootRelativePaths === 'function') fixRootRelativePaths();
+                });
+            
+            // Load footer
+            fetch('../includes/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                    if (typeof fixRootRelativePaths === 'function') fixRootRelativePaths();
+                });
+            
+            // Load CTA banner
+            fetch('../includes/cta-banner.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('cta-banner-placeholder').innerHTML = data;
+                    if (typeof fixRootRelativePaths === 'function') fixRootRelativePaths();
+                });
+        });
+    </script>
+</body>
+</html>

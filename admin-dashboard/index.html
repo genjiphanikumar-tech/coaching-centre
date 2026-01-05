@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Dashboard — Coaching Platform</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body class="admin">
+  <div id="site-header"></div>
+
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="brand">
+        <img src="../assets/images/logos/logo-icon.svg" alt="logo">
+        <div>
+          <strong>Coaching</strong>
+          <div class="muted">Admin</div>
+        </div>
+      </div>
+      <nav>
+        <a class="active" href="index.html">Dashboard</a>
+        <a href="manage-courses.html">Manage Courses</a>
+        <a href="manage-students.html">Manage Students</a>
+        <a href="payments.html">Payments</a>
+        <a href="reports.html">Reports</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+      <div class="muted">Logged in as <br><strong>admin@coaching.local</strong></div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-topbar">
+        <h1>Dashboard</h1>
+        <div class="topbar-actions">
+          <input class="search-input" placeholder="Search...">
+          <button class="btn">New Course</button>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card"><div class="kicker">Total Students</div><div class="value">1,234</div></div>
+        <div class="card"><div class="kicker">Active Batches</div><div class="value">18</div></div>
+        <div class="card"><div class="kicker">Revenue (MTD)</div><div class="value">₹ 2.4L</div></div>
+        <div class="card"><div class="kicker">Open Tickets</div><div class="value">9</div></div>
+      </div>
+
+      <div class="dashboard-grid">
+        <section class="widget">
+          <h3>Recent Activity</h3>
+          <p class="meta">Latest user signups and course enrollments.</p>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th>User</th><th>Action</th><th>When</th></tr></thead>
+              <tbody>
+                <tr><td>Rahul</td><td>Enrolled in Python</td><td>2 hours ago</td></tr>
+                <tr><td>Meera</td><td>Requested Refund</td><td>Yesterday</td></tr>
+                <tr><td>Akash</td><td>Completed Course</td><td>2 days ago</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <aside>
+          <div class="widget">
+            <h3>Key Metrics</h3>
+            <div class="kpi-row">
+              <div class="kpi"><div class="num">95%</div><div class="desc">Completion Rate</div></div>
+              <div class="kpi"><div class="num">4.8</div><div class="desc">Avg Rating</div></div>
+            </div>
+            <div style="height:12px"></div>
+            <div class="placeholder">Compact revenue sparkline</div>
+          </div>
+
+          <div class="widget" style="margin-top:12px">
+            <h3>Recent Payments</h3>
+            <ul class="compact-list">
+              <li><span>Rohit</span><span class="small">₹ 6,000</span></li>
+              <li><span>Shreya</span><span class="small">₹ 9,500</span></li>
+              <li><span>Vikram</span><span class="small">₹ 3,000</span></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <div class="recent-activity">
+        <h3>Site Health</h3>
+        <div class="placeholder">Uptime and error logs preview</div>
+      </div>
+
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../assets/js/admin.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // load includes relative to admin folder
+    fetch('../includes/header.html').then(r=>r.text()).then(t=>{document.getElementById('site-header').innerHTML=t; if(window.fixRootRelativePaths) window.fixRootRelativePaths();});
+    fetch('../includes/footer.html').then(r=>r.text()).then(t=>{document.getElementById('site-footer').innerHTML=t; if(window.fixRootRelativePaths) window.fixRootRelativePaths();});
+  </script>
+</body>
+</html>

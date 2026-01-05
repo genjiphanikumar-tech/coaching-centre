@@ -1,0 +1,20 @@
+/* Dashboard widgets & charts styles (admin) */
+.dashboard-grid{display:grid;grid-template-columns:2fr 1fr;gap:18px}
+@media (max-width:1000px){.dashboard-grid{grid-template-columns:1fr}}
+.widget{background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(11,18,32,0.04)}
+.widget h3{margin:0 0 8px;font-size:16px}
+.widget .meta{font-size:13px;color:#6f7f8f;margin-bottom:12px}
+
+.kpi-row{display:flex;gap:12px}
+.kpi{flex:1;background:linear-gradient(180deg,#f8fbff,#fff);padding:12px;border-radius:8px;text-align:center}
+.kpi .num{font-weight:700;font-size:18px}
+.kpi .desc{font-size:13px;color:#6f7f8f}
+
+.chart-placeholder{height:220px;border-radius:8px;background:linear-gradient(90deg,#fafcff,#eef6fe);display:flex;align-items:center;justify-content:center;color:#9fb6da}
+
+/* compact tables & list */
+.compact-list{list-style:none;padding:0;margin:0}
+.compact-list li{display:flex;align-items:center;justify-content:space-between;padding:10px 8px;border-bottom:1px solid #f1f5f9}
+
+/* small helpers */
+.badge{display:inline-block;padding:6px 8px;border-radius:999px;background:#eef7ff;color:#2b7ed6;font-weight:600;font-size:12px}

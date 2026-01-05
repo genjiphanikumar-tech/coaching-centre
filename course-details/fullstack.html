@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Fullstack Web Development — Course</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <main class="container">
+    <h1>Fullstack Web Development</h1>
+    <p>End-to-end web development: frontend, backend, and deployment.</p>
+    <h3>Syllabus</h3>
+    <ul>
+      <li>Frontend with React</li>
+      <li>Backend with Node</li>
+      <li>DevOps basics</li>
+    </ul>
+    <p><a class="btn" href="../contact.html">Enroll Now</a></p>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    fetch('../includes/header.html').then(r=>r.text()).then(t=>{document.getElementById('header-placeholder').innerHTML=t; if(window.fixRootRelativePaths) window.fixRootRelativePaths();});
+    fetch('../includes/footer.html').then(r=>r.text()).then(t=>{document.getElementById('footer-placeholder').innerHTML=t; if(window.fixRootRelativePaths) window.fixRootRelativePaths();});
+  </script>
+</body>
+</html>

@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Courses | Professional Coaching Institute - Career-Focused Tech Training</title>
+    <meta name="description" content="Browse our complete course catalog: Programming, Web Development, AI & Data Science, Creative Design, and Automation tracks. Choose your career path.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/logos/logo-icon.svg">
+    <style>
+        /* Courses Page Specific Styles */
+        .courses-hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-purple) 100%);
+            color: white;
+            padding: var(--spacing-3xl) 0;
+            text-align: center;
+        }
+        
+        .courses-hero h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .courses-hero-subtitle {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto var(--spacing-2xl);
+            opacity: 0.9;
+        }
+        
+        .track-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-2xl);
+        }
+        
+        .track-filter {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: var(--spacing-sm) var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+        
+        .track-filter:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .track-filter.active {
+            background-color: white;
+            color: var(--primary-blue);
+        }
+        
+        .course-search {
+            max-width: 600px;
+            margin: 0 auto var(--spacing-2xl);
+        }
+        
+        .search-box {
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-lg) 60px;
+            border: none;
+            border-radius: var(--radius-lg);
+            font-size: 1.1rem;
+            background-color: white;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: var(--spacing-xl);
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-500);
+            font-size: 1.25rem;
+        }
+        
+        .courses-container {
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .track-section {
+            margin-bottom: var(--spacing-3xl);
+            scroll-margin-top: 100px;
+        }
+        
+        .track-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .track-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-2xl);
+            padding-bottom: var(--spacing-lg);
+            border-bottom: 2px solid var(--gray-200);
+        }
+        
+        .track-title {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+        }
+        
+        .track-icon {
+            background-color: var(--gray-100);
+            width: 70px;
+            height: 70px;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-blue);
+        }
+        
+        .track-info h2 {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .track-info p {
+            color: var(--gray-600);
+            margin-bottom: 0;
+        }
+        
+        .track-link {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+        
+        .track-link:hover {
+            gap: var(--spacing-md);
+        }
+        
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-xl);
+        }
+        
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: var(--spacing-3xl);
+            color: var(--gray-500);
+        }
+        
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: var(--spacing-lg);
+            color: var(--gray-300);
+        }
+        
+        .course-filters-sidebar {
+            display: none;
+        }
+        
+        .comparison-guide {
+            background-color: var(--gray-50);
+            padding: var(--spacing-3xl) 0;
+            margin-top: var(--spacing-3xl);
+        }
+        
+        .comparison-table {
+            background-color: white;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .comparison-header {
+            display: grid;
+            grid-template-columns: 2fr repeat(4, 1fr);
+            background-color: var(--primary-blue);
+            color: white;
+            font-weight: 600;
+            padding: var(--spacing-lg);
+        }
+        
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr repeat(4, 1fr);
+            padding: var(--spacing-lg);
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+        
+        .comparison-row:nth-child(even) {
+            background-color: var(--gray-50);
+        }
+        
+        .comparison-feature {
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+        
+        .comparison-value {
+            text-align: center;
+            color: var(--gray-600);
+        }
+        
+        .comparison-value.yes {
+            color: var(--success);
+            font-weight: 600;
+        }
+        
+        .comparison-value.no {
+            color: var(--danger);
+        }
+        
+        @media (max-width: 1024px) {
+            .course-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .comparison-header,
+            .comparison-row {
+                grid-template-columns: 2fr repeat(2, 1fr);
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .courses-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .courses-hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .track-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--spacing-lg);
+            }
+            
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-header,
+            .comparison-row {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-sm);
+            }
+            
+            .comparison-feature {
+                font-weight: 600;
+                background-color: var(--gray-100);
+                padding: var(--spacing-sm);
+                border-radius: var(--radius-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Include -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- COURSES HERO SECTION -->
+        <section class="courses-hero">
+            <div class="container">
+                <h1>Choose Your Career Path</h1>
+                <p class="courses-hero-subtitle">14 specialized courses across 5 career tracks. From beginner to job-ready professional in 3-6 months.</p>
+                
+                <div class="track-filters">
+                    <button class="track-filter active" data-track="all">All Courses</button>
+                    <button class="track-filter" data-track="programming">Programming</button>
+                    <button class="track-filter" data-track="webdev">Web Development</button>
+                    <button class="track-filter" data-track="ai">AI & Data Science</button>
+                    <button class="track-filter" data-track="creative">Creative & Automation</button>
+                </div>
+                
+                <div class="course-search">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="courseSearch" placeholder="Search for courses (e.g., 'Python', 'Web Development', 'AI')...">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COURSES LISTING -->
+        <section class="courses-container">
+            <div class="container">
+                <!-- Programming Foundation Track -->
+                <div id="programming" class="track-section" data-track="programming">
+                    <div class="track-header">
+                        <div class="track-title">
+                            <div class="track-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="track-info">
+                                <h2>Programming Foundation</h2>
+                                <p>Master programming fundamentals before specialization. Build strong coding foundations.</p>
+                            </div>
+                        </div>
+                        <a href="#programming-details" class="track-link">
+                            View Track Details <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="course-grid" id="programming-courses">
+                        <!-- Course cards will be loaded via JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Web Development Track -->
+                <div id="webdev" class="track-section" data-track="webdev">
+                    <div class="track-header">
+                        <div class="track-title">
+                            <div class="track-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="track-info">
+                                <h2>Web Development</h2>
+                                <p>Build modern, responsive web applications. Frontend, backend, or full stack—choose your path.</p>
+                            </div>
+                        </div>
+                        <a href="#webdev-details" class="track-link">
+                            View Track Details <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="course-grid" id="webdev-courses">
+                        <!-- Course cards will be loaded via JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- AI & Data Science Track -->
+                <div id="ai" class="track-section" data-track="ai">
+                    <div class="track-header">
+                        <div class="track-title">
+                            <div class="track-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="track-info">
+                                <h2>AI & Data Science</h2>
+                                <p>Enter the world of intelligent systems, data analysis, and machine learning.</p>
+                            </div>
+                        </div>
+                        <a href="#ai-details" class="track-link">
+                            View Track Details <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="course-grid" id="ai-courses">
+                        <!-- Course cards will be loaded via JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Creative & Automation Track -->
+                <div id="creative" class="track-section" data-track="creative">
+                    <div class="track-header">
+                        <div class="track-title">
+                            <div class="track-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="track-info">
+                                <h2>Creative & Automation</h2>
+                                <p>Design, edit, and automate like a pro. Creative skills meet technical implementation.</p>
+                            </div>
+                        </div>
+                        <a href="#creative-details" class="track-link">
+                            View Track Details <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="course-grid" id="creative-courses">
+                        <!-- Course cards will be loaded via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COURSE COMPARISON GUIDE -->
+        <section class="comparison-guide">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Not Sure Which Course Is Right For You?</h2>
+                    <p class="section-subtitle">Compare courses based on your background, goals, and career aspirations</p>
+                </div>
+                
+                <div class="comparison-table">
+                    <div class="comparison-header">
+                        <div class="comparison-category">Feature / Course</div>
+                        <div class="comparison-course">Java Full Stack</div>
+                        <div class="comparison-course">Python Data Science</div>
+                        <div class="comparison-course">MERN Stack</div>
+                        <div class="comparison-course">Generative AI</div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-feature">Ideal For Beginners?</div>
+                        <div class="comparison-value yes">Yes</div>
+                        <div class="comparison-value yes">Yes</div>
+                        <div class="comparison-value">Some Basics Required</div>
+                        <div class="comparison-value yes">Yes</div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-feature">Math Background Needed</div>
+                        <div class="comparison-value no">Minimal</div>
+                        <div class="comparison-value yes">Intermediate</div>
+                        <div class="comparison-value no">Minimal</div>
+                        <div class="comparison-value no">Minimal</div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-feature">Typical Job Roles</div>
+                        <div class="comparison-value">Java Developer, Backend Engineer</div>
+                        <div class="comparison-value">Data Analyst, ML Engineer</div>
+                        <div class="comparison-value">Full Stack Developer, Web Developer</div>
+                        <div class="comparison-value">AI Specialist, Prompt Engineer</div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-feature">Avg. Starting Salary (Fresher)</div>
+                        <div class="comparison-value">₹4-6 LPA</div>
+                        <div class="comparison-value">₹5-7 LPA</div>
+                        <div class="comparison-value">₹4-6 LPA</div>
+                        <div class="comparison-value">₹4-8 LPA</div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-feature">Course Duration</div>
+                        <div class="comparison-value">12 Weeks</div>
+                        <div class="comparison-value">14 Weeks</div>
+                        <div class="comparison-value">16 Weeks</div>
+                        <div class="comparison-value">8 Weeks</div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-feature">Best For Career In</div>
+                        <div class="comparison-value">Enterprise Companies, Banks</div>
+                        <div class="comparison-value">Startups, Analytics Firms</div>
+                        <div class="comparison-value">Startups, Digital Agencies</div>
+                        <div class="comparison-value">All Industries, Freelancing</div>
+                    </div>
+                </div>
+                
+                <div class="text-center" style="margin-top: var(--spacing-2xl);">
+                    <p>Still confused? <a href="contact.html#counseling" style="font-weight: 600;">Book a free career counseling session</a> with our experts</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="final-cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-content">
+                        <h2>Get Your Personalized Learning Plan</h2>
+                        <p>Our career counselors will analyze your background, skills, and goals to recommend the perfect course for you.</p>
+                        
+                        <div class="cta-benefits">
+                            <div class="benefit">
+                                <i class="fas fa-check-circle"></i>
+                                <span>No obligation to enroll</span>
+                            </div>
+                            <div class="benefit">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Course comparison based on your profile</span>
+                            </div>
+                            <div class="benefit">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Clear career path visualization</span>
+                            </div>
+                            <div class="benefit">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Scholarship eligibility check</span>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-actions">
+                            <a href="contact.html#counseling" class="btn btn-primary btn-xlarge">
+                                <i class="fas fa-calendar-alt"></i> Book Free Career Counseling
+                            </a>
+                            <a href="tel:+91 8885570870" class="btn btn-secondary btn-xlarge">
+                                <i class="fas fa-phone-alt"></i> Call for Quick Advice
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Include -->
+    <div id="footer-placeholder"></div>
+
+    <!-- CTA Banner Include -->
+    <div id="cta-banner-placeholder"></div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load header
+            fetch('includes/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                    initializeMobileMenu();
+                    if (typeof fixRootRelativePaths === 'function') fixRootRelativePaths();
+                });
+            
+            // Load footer
+            fetch('includes/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                    if (typeof fixRootRelativePaths === 'function') fixRootRelativePaths();
+                });
+            
+            // Load CTA banner
+            fetch('includes/cta-banner.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('cta-banner-placeholder').innerHTML = data;
+                });
+            
+            // Load course cards
+            fetch('includes/course-cards.html')
+                .then(response => response.text())
+                .then(data => {
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = data;
+                    
+                    const allCards = tempDiv.querySelectorAll('.course-card');
+                    
+                    // Categorize courses
+                    const programmingCourses = [];
+                    const webdevCourses = [];
+                    const aiCourses = [];
+                    const creativeCourses = [];
+                    
+                    allCards.forEach(card => {
+                        const category = card.querySelector('.course-category').textContent.toLowerCase();
+                        
+                        if (category.includes('programming')) {
+                            programmingCourses.push(card.outerHTML);
+                        } else if (category.includes('webdev')) {
+                            webdevCourses.push(card.outerHTML);
+                        } else if (category.includes('ai')) {
+                            aiCourses.push(card.outerHTML);
+                        } else if (category.includes('creative')) {
+                            creativeCourses.push(card.outerHTML);
+                        }
+                    });
+                    
+                    // Populate course grids
+                    if (programmingCourses.length > 0) {
+                        document.getElementById('programming-courses').innerHTML = programmingCourses.join('');
+                    }
+                    
+                    if (webdevCourses.length > 0) {
+                        document.getElementById('webdev-courses').innerHTML = webdevCourses.join('');
+                    }
+                    
+                    if (aiCourses.length > 0) {
+                        document.getElementById('ai-courses').innerHTML = aiCourses.join('');
+                    }
+                    
+                    if (creativeCourses.length > 0) {
+                        document.getElementById('creative-courses').innerHTML = creativeCourses.join('');
+                    }
+                    
+                    // Initialize course card hover effects
+                    initializeCourseCards();
+                });
+            
+            // Track filters
+            const trackFilters = document.querySelectorAll('.track-filter');
+            const trackSections = document.querySelectorAll('.track-section');
+            
+            trackFilters.forEach(filter => {
+                filter.addEventListener('click', function() {
+                    const track = this.getAttribute('data-track');
+                    
+                    // Update active filter
+                    trackFilters.forEach(f => f.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show/hide track sections
+                    if (track === 'all') {
+                        trackSections.forEach(section => {
+                            section.style.display = 'block';
+                        });
+                    } else {
+                        trackSections.forEach(section => {
+                            if (section.getAttribute('data-track') === track) {
+                                section.style.display = 'block';
+                            } else {
+                                section.style.display = 'none';
+                            }
+                        });
+                    }
+                    
+                    // Smooth scroll to first visible section
+                    const firstVisible = document.querySelector('.track-section[style="display: block"]');
+                    if (firstVisible && track !== 'all') {
+                        window.scrollTo({
+                            top: firstVisible.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Course search functionality
+            const searchInput = document.getElementById('courseSearch');
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase().trim();
+                    
+                    if (searchTerm.length < 2) {
+                        // Reset to show all courses
+                        document.querySelectorAll('.course-card').forEach(card => {
+                            card.style.display = 'block';
+                        });
+                        document.querySelectorAll('.empty-state').forEach(state => {
+                            state.style.display = 'none';
+                        });
+                        return;
+                    }
+                    
+                    let foundResults = false;
+                    
+                    // Search in course cards
+                    document.querySelectorAll('.course-card').forEach(card => {
+                        const title = card.querySelector('.course-title').textContent.toLowerCase();
+                        const description = card.querySelector('.course-description').textContent.toLowerCase();
+                        const skills = card.querySelector('.course-skills').textContent.toLowerCase();
+                        
+                        if (title.includes(searchTerm) || 
+                            description.includes(searchTerm) || 
+                            skills.includes(searchTerm)) {
+                            card.style.display = 'block';
+                            foundResults = true;
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                    
+                    // Show empty state if no results
+                    document.querySelectorAll('.course-grid').forEach(grid => {
+                        const cards = grid.querySelectorAll('.course-card');
+                        const visibleCards = Array.from(cards).filter(card => card.style.display !== 'none');
+                        
+                        if (visibleCards.length === 0) {
+                            if (!grid.querySelector('.empty-state')) {
+                                const emptyState = document.createElement('div');
+                                emptyState.className = 'empty-state';
+                                emptyState.innerHTML = `
+                                    <i class="fas fa-search"></i>
+                                    <h3>No courses found for "${searchTerm}"</h3>
+                                    <p>Try searching with different keywords or browse all courses</p>
+                                    <button class="btn btn-primary" id="resetSearch">Show All Courses</button>
+                                `;
+                                grid.appendChild(emptyState);
+                                
+                                // Add reset button functionality
+                                document.getElementById('resetSearch').addEventListener('click', function() {
+                                    searchInput.value = '';
+                                    searchInput.dispatchEvent(new Event('input'));
+                                });
+                            }
+                        } else {
+                            const emptyState = grid.querySelector('.empty-state');
+                            if (emptyState) {
+                                emptyState.remove();
+                            }
+                        }
+                    });
+                });
+            }
+            
+            // Initialize course cards function
+            function initializeCourseCards() {
+                const courseCards = document.querySelectorAll('.course-card');
+                courseCards.forEach(card => {
+                    card.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-10px)';
+                        this.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+                    });
+                    
+                    card.addEventListener('mouseleave', function() {
+                        this.style.transform = 'translateY(-5px)';
+                        this.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+                    });
+                });
+            }
+            
+            window.initializeCourseCards = initializeCourseCards;
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: target.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

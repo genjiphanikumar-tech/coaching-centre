@@ -1,0 +1,86 @@
+/* Admin area base styles */
+:root{
+  --admin-bg:#f6f8fb;
+  --admin-sidebar:#0f1724;
+  --admin-accent:#2b7ed6;
+  --admin-card:#ffffff;
+  --admin-text:#0b1220;
+  --transition:200ms ease;
+}
+html,body{height:100%;}
+body.admin{
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:var(--admin-bg);
+  color:var(--admin-text);
+}
+/* Layout */
+.admin-shell{
+  display:flex;
+  min-height:100vh;
+}
+.admin-sidebar{
+  width:260px;
+  background:linear-gradient(180deg,var(--admin-sidebar),#07101a);
+  color:#fff;
+  padding:24px 18px;
+  box-shadow:2px 0 8px rgba(11,18,32,0.06);
+}
+.admin-sidebar .brand{
+  display:flex;align-items:center;gap:12px;margin-bottom:18px
+}
+.admin-sidebar .brand img{height:36px}
+.admin-sidebar nav{margin-top:18px}
+.admin-sidebar a{
+  display:block;padding:10px 12px;border-radius:8px;color:#d7e6f6;text-decoration:none;margin-bottom:6px;transition:background var(--transition), color var(--transition);
+}
+.admin-sidebar a.active, .admin-sidebar a:hover{background:rgba(255,255,255,0.04);color:#fff}
+.admin-sidebar .muted{font-size:13px;color:rgba(255,255,255,0.6);margin-top:10px}
+
+.admin-main{
+  flex:1;padding:28px 32px;
+}
+.admin-topbar{
+  display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;
+}
+.topbar-actions{display:flex;gap:12px;align-items:center}
+.search-input{padding:8px 12px;border-radius:10px;border:1px solid #e6eef8;background:#fff;min-width:220px}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px}
+@media (max-width:1000px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.cards{grid-template-columns:1fr}}
+.card{background:var(--admin-card);padding:18px;border-radius:10px;box-shadow:0 4px 10px rgba(15,20,32,0.04);}
+.card .label{font-size:13px;color:#6b7b8a}
+.card .value{font-size:20px;font-weight:700;margin-top:6px}
+
+/* Table styles */
+.table-wrap{background:var(--admin-card);padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(11,18,32,0.04)}
+.table{width:100%;border-collapse:collapse}
+.table th, .table td{padding:12px 14px;text-align:left;border-bottom:1px solid #eef5fb}
+.table th{font-size:13px;color:#6c7a88;font-weight:600}
+.table tbody tr:hover{background:linear-gradient(90deg, rgba(43,126,214,0.03), transparent)}
+.table .actions{display:flex;gap:8px}
+.btn{display:inline-block;padding:8px 12px;border-radius:8px;border:0;background:var(--admin-accent);color:#fff;text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;border:1px solid #dbeafc;color:var(--admin-accent)}
+
+/* Forms */
+.form-row{display:flex;gap:12px;align-items:center}
+.form-row .field{flex:1}
+.input{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8;background:#fff}
+.label{font-size:13px;color:#4b5a66;margin-bottom:6px;display:block}
+
+/* Utilities */
+.kicker{font-size:13px;color:#6b7b8a}
+.small{font-size:13px;color:#687583}
+.center{display:flex;align-items:center;justify-content:center}
+
+/* Responsive */
+@media (max-width:900px){
+  .admin-sidebar{display:none}
+  .admin-shell{flex-direction:column}
+  .admin-main{padding:18px}
+}
+
+/* Dashboard specific tweaks */
+.recent-activity{margin-top:18px}
+.placeholder{height:160px;border-radius:8px;background:linear-gradient(90deg,#f5f7fb,#eef6fe);display:flex;align-items:center;justify-content:center;color:#9fb6da}

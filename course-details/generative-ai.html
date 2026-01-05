@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Generative AI — Course</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <main class="container">
+    <h1>Generative AI</h1>
+    <p>Hands-on course on building generative models and applications.</p>
+    <h3>Syllabus</h3>
+    <ul>
+      <li>Diffusion Models</li>
+      <li>Prompt Engineering</li>
+      <li>Deployment & Ethics</li>
+    </ul>
+    <p><a class="btn" href="../contact.html">Enroll Now</a></p>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    fetch('../includes/header.html').then(r=>r.text()).then(t=>{document.getElementById('header-placeholder').innerHTML=t; if(window.fixRootRelativePaths) window.fixRootRelativePaths();});
+    fetch('../includes/footer.html').then(r=>r.text()).then(t=>{document.getElementById('footer-placeholder').innerHTML=t; if(window.fixRootRelativePaths) window.fixRootRelativePaths();});
+  </script>
+</body>
+</html>

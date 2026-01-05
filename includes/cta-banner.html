@@ -1,0 +1,76 @@
+<div class="cta-banner">
+    <div class="container">
+        <div class="cta-banner-content">
+            <div class="cta-banner-text">
+                <h3>Ready to Start Your Tech Career?</h3>
+                <p>Join our next batch starting on <strong>4th January 2026</strong>. Limited seats available for personalized attention.</p>
+            </div>
+            <div class="cta-banner-actions">
+                <a href="/contact.html#counseling" class="btn btn-primary">
+                    <i class="fas fa-calendar-check"></i> Book Free Counseling
+                </a>
+                <a href="tel:+91 8885570870" class="btn btn-secondary">
+                    <i class="fas fa-phone-alt"></i> Call Now: +91 8885570870
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.cta-banner {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-purple) 100%);
+    color: white;
+    padding: var(--spacing-xl) 0;
+    position: sticky;
+    bottom: 0;
+    z-index: 999;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cta-banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-xl);
+}
+
+.cta-banner-text h3 {
+    color: white;
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.5rem;
+}
+
+.cta-banner-text p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+.cta-banner-text strong {
+    color: white;
+}
+
+.cta-banner-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .cta-banner-content {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-lg);
+    }
+    
+    .cta-banner-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .cta-banner-actions .btn {
+        width: 100%;
+    }
+}
+</style>

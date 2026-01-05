@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Settings — Admin</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin">
+  <div id="site-header"></div>
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="brand"><img src="../assets/images/logos/logo-icon.svg" alt="logo"><div><strong>Coaching</strong><div class="muted">Admin</div></div></div>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="manage-courses.html">Manage Courses</a>
+        <a href="manage-students.html">Manage Students</a>
+        <a href="payments.html">Payments</a>
+        <a href="reports.html">Reports</a>
+        <a class="active" href="settings.html">Settings</a>
+      </nav>
+    </aside>
+    <main class="admin-main">
+      <div class="admin-topbar"><h1>Settings</h1></div>
+      <div class="card">
+        <h3>Site Settings</h3>
+        <div style="margin-top:8px">
+          <label class="label">Site Title</label>
+          <input class="input" value="Coaching Platform">
+        </div>
+        <div style="margin-top:8px">
+          <label class="label">Contact Email</label>
+          <input class="input" value="support@example.com">
+        </div>
+        <div style="margin-top:12px"><button class="btn">Save</button></div>
+      </div>
+    </main>
+  </div>
+  <div id="site-footer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../assets/js/admin.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    fetch('../includes/header.html').then(r=>r.text()).then(t=>{document.getElementById('site-header').innerHTML=t; if(window.fixRootRelativePaths) window.fixRootRelativePaths();});
+    fetch('../includes/footer.html').then(r=>r.text()).then(t=>{document.getElementById('site-footer').innerHTML=t; if(window.fixRootRelativePaths) window.fixRootRelativePaths();});
+  </script>
+</body>
+</html>

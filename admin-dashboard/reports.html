@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Reports — Admin</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body class="admin">
+  <div id="site-header"></div>
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="brand"><img src="../assets/images/logos/logo-icon.svg" alt="logo"><div><strong>Coaching</strong><div class="muted">Admin</div></div></div>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="manage-courses.html">Manage Courses</a>
+        <a href="manage-students.html">Manage Students</a>
+        <a href="payments.html">Payments</a>
+        <a class="active" href="reports.html">Reports</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+    </aside>
+    <main class="admin-main">
+      <div class="admin-topbar"><h1>Reports</h1></div>
+      <div class="dashboard-grid">
+        <section class="widget"><h3>Enrollments</h3><div class="chart-placeholder">Enrollment chart placeholder</div></section>
+        <aside class="widget"><h3>Top Courses</h3><ul class="compact-list"><li>Python<span class="badge">120</span></li><li>Fullstack<span class="badge">80</span></li></ul></aside>
+      </div>
+    </main>
+  </div>
+  <div id="site-footer"></div>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    fetch('../includes/header.html').then(r=>r.text()).then(t=>{document.getElementById('site-header').innerHTML=t; if(window.fixRootRelativePaths) window.fixRootRelativePaths();});
+    fetch('../includes/footer.html').then(r=>r.text()).then(t=>{document.getElementById('site-footer').innerHTML=t; if(window.fixRootRelativePaths) window.fixRootRelativePaths();});
+  </script>
+</body>
+</html>

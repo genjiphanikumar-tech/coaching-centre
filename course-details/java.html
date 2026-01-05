@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Full Stack Course | Professional Coaching Institute</title>
+    <meta name="description" content="Master Java from basics to advanced with Spring Boot, Hibernate, Microservices. Become a Java Full Stack Developer in 12 weeks. 100% practical, project-based learning.">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/logos/logo-icon.svg">
+    <style>
+        /* Course Details Specific Styles */
+        .course-hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+            color: white;
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .course-hero-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--spacing-3xl);
+            align-items: center;
+        }
+        
+        .course-hero-text h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .course-tagline {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .course-hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .meta-item i {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .meta-item span {
+            font-weight: 500;
+        }
+        
+        .course-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+        }
+        
+        .course-hero-card {
+            background-color: white;
+            color: var(--gray-900);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .course-price {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .price-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            display: block;
+            line-height: 1;
+        }
+        
+        .price-note {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin-top: var(--spacing-xs);
+        }
+        
+        .course-includes {
+            list-style: none;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .course-includes li {
+            padding: var(--spacing-sm) 0;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            color: var(--gray-700);
+        }
+        
+        .course-includes i {
+            color: var(--success);
+        }
+        
+        .enroll-button {
+            width: 100%;
+        }
+        
+        .course-content {
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .course-tabs {
+            position: sticky;
+            top: 80px;
+            background-color: white;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .tabs-container {
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        
+        .tabs-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .course-tab {
+            padding: var(--spacing-lg) var(--spacing-xl);
+            background: none;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            cursor: pointer;
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+            transition: all var(--transition-normal);
+        }
+        
+        .course-tab:hover {
+            color: var(--primary-blue);
+            background-color: var(--gray-50);
+        }
+        
+        .course-tab.active {
+            color: var(--primary-blue);
+            border-bottom: 3px solid var(--primary-blue);
+            font-weight: 600;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-xl);
+            color: var(--gray-900);
+            position: relative;
+            padding-bottom: var(--spacing-md);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-blue);
+        }
+        
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--spacing-3xl);
+        }
+        
+        .ideal-for-list {
+            list-style: none;
+        }
+        
+        .ideal-for-list li {
+            padding: var(--spacing-sm) 0;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .ideal-for-list i {
+            color: var(--success);
+        }
+        
+        .prerequisites-card {
+            background-color: var(--gray-50);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .prerequisites-card h4 {
+            margin-bottom: var(--spacing-md);
+            color: var(--gray-900);
+        }
+        
+        .prerequisites-list {
+            list-style: none;
+        }
+        
+        .prerequisites-list li {
+            padding: var(--spacing-sm) 0;
+            color: var(--gray-600);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .prerequisites-list i {
+            color: var(--primary-blue);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-xl);
+        }
+        
+        .skill-category {
+            background-color: white;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .skill-category h4 {
+            color: var(--primary-blue);
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid var(--gray-200);
+            color: var(--gray-600);
+        }
+        
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-lg);
+        }
+        
+        .tool-card {
+            background-color: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            transition: transform var(--transition-normal);
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tool-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .tool-card h4 {
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.1rem;
+        }
+        
+        .tool-card p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        .course-structure-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-3xl);
+        }
+        
+        .structure-card {
+            background-color: white;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .structure-card h4 {
+            color: var(--primary-blue);
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .structure-list {
+            list-style: none;
+        }
+        
+        .structure-list li {
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid var(--gray-200);
+            color: var(--gray-600);
+        }
+        
+        .structure-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .module-accordion {
+            margin-top: var(--spacing-xl);
+        }
+        
+        .module-item {
+            background-color: white;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-md);
+            overflow: hidden;
+        }
+        
+        .module-header {
+            padding: var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background-color: var(--gray-50);
+        }
+        
+        .module-header h5 {
+            margin-bottom: 0;
+            color: var(--gray-900);
+        }
+        
+        .module-duration {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .module-content {
+            padding: var(--spacing-lg);
+            border-top: 1px solid var(--gray-200);
+            display: none;
+        }
+        
+        .module-content.active {
+            display: block;
+        }
+        
+        .topics-list {
+            list-style: none;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .topics-list li {
+            padding: var(--spacing-sm) 0;
+            color: var(--gray-600);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .topics-list i {
+            color: var(--primary-blue);
+            font-size: 0.8rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .project-card:last-child {
+            margin-bottom: 0;
+        }
+        
+        .project-card h4 {
+            color: var(--primary-blue);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .project-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .project-feature {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+        
+        .project-feature i {
+            color: var(--success);
+        }
+        
+        .job-roles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-xl);
+        }
+        
+        .job-role-card {
+            background-color: white;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            transition: transform var(--transition-normal);
+        }
+        
+        .job-role-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .job-role-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .job-role-card h4 {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .job-role-card p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        .salary-info {
+            background-color: var(--gray-50);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .salary-ranges {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .salary-range {
+            text-align: center;
+        }
+        
+        .range-label {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .range-amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        .payment-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-xl);
+        }
+        
+        .payment-option {
+            background-color: white;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .payment-option.featured {
+            border: 2px solid var(--primary-blue);
+            transform: scale(1.05);
+            position: relative;
+        }
+        
+        .payment-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-blue);
+            color: white;
+            padding: var(--spacing-xs) var(--spacing-lg);
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .payment-option h4 {
+            color: var(--primary-blue);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .payment-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .payment-note {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .included-features {
+            list-style: none;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .included-features li {
+            padding: var(--spacing-sm) 0;
+            color: var(--gray-600);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: 0.9rem;
+        }
+        
+        .included-features i {
+            color: var(--success);
+        }
+        
+        .final-cta-course {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+            color: white;
+            padding: var(--spacing-3xl) 0;
+            margin-top: var(--spacing-3xl);
+        }
+        
+        .cta-course-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .cta-course-content h2 {
+            color: white;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .cta-course-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: var(--spacing-2xl);
+        }
+        
+        .cta-course-actions {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 1024px) {
+            .course-hero-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .overview-grid,
+            .course-structure-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid,
+            .tools-grid,
+            .job-roles-grid,
+            .payment-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .salary-ranges {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .course-hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .course-tabs {
+                position: static;
+            }
+            
+            .tabs-container {
+                flex-wrap: wrap;
+            }
+            
+            .course-tab {
+                flex: 1;
+                min-width: 120px;
+                text-align: center;
+            }
+            
+            .skills-grid,
+            .tools-grid,
+            .job-roles-grid,
+            .payment-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .payment-option.featured {
+                transform: none;
+            }
+            
+            .cta-course-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Include -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- COURSE HERO SECTION -->
+        <section class="course-hero">
+            <div class="container">
+                <div class="course-hero-content">
+                    <div class="course-hero-text">
+                        <h1>Java Full Stack Development</h1>
+                        <p class="course-tagline">Master Java, Spring Boot, Hibernate & Microservices to build enterprise-level applications</p>
+                        
+                        <div class="course-hero-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>12 Weeks Program</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-signal"></i>
+                                <span>Beginner to Advanced</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-briefcase"></i>
+                                <span>100% Project-Based</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>Max 20 Students/Batch</span>
+                            </div>
+                        </div>
+                        
+                        <div class="course-hero-actions">
+                            <a href="#enroll" class="btn btn-primary btn-large">
+                                <i class="fas fa-rocket"></i> Enroll Now
+                            </a>
+                            <a href="../contact.html#counseling" class="btn btn-secondary btn-large">
+                                <i class="fas fa-calendar-check"></i> Book Free Demo
+                            </a>
+                            <a href="#curriculum" class="btn btn-outline btn-large" style="color: white; border-color: white;">
+                                <i class="fas fa-book-open"></i> View Curriculum
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="course-hero-card">
+                        <div class="course-price">
+                            <span class="price-amount">₹24,999</span>
+                            <span class="price-note">EMI available from ₹2,499/month</span>
+                        </div>
+                        
+                        <ul class="course-includes">
+                            <li><i class="fas fa-check-circle"></i> 120+ Hours Live Training</li>
+                            <li><i class="fas fa-check-circle"></i> 15+ Real-world Projects</li>
+                            <li><i class="fas fa-check-circle"></i> 1:1 Mentorship Sessions</li>
+                            <li><i class="fas fa-check-circle"></i> Career Support for 6 Months</li>
+                            <li><i class="fas fa-check-circle"></i> Certificate & Portfolio</li>
+                            <li><i class="fas fa-check-circle"></i> Lifetime Community Access</li>
+                        </ul>
+                        
+                        <a href="#enroll" class="btn btn-primary enroll-button">
+                            <i class="fas fa-lock"></i> Secure Your Seat
+                        </a>
+                        
+                        <p class="text-center" style="margin-top: var(--spacing-md); font-size: 0.9rem; color: var(--gray-600);">
+                            <i class="fas fa-shield-alt"></i> 7-Day Money Back Guarantee
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COURSE TABS NAVIGATION -->
+        <nav class="course-tabs">
+            <div class="container">
+                <div class="tabs-container">
+                    <button class="course-tab active" data-tab="overview">Overview</button>
+                    <button class="course-tab" data-tab="curriculum">Curriculum</button>
+                    <button class="course-tab" data-tab="projects">Projects</button>
+                    <button class="course-tab" data-tab="career">Career Outcomes</button>
+                    <button class="course-tab" data-tab="instructors">Instructors</button>
+                    <button class="course-tab" data-tab="fees">Fees & Payment</button>
+                    <button class="course-tab" data-tab="faq">FAQ</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- COURSE CONTENT -->
+        <div class="course-content">
+            <!-- OVERVIEW TAB -->
+            <div id="overview" class="tab-content active">
+                <div class="container">
+                    <h2 class="section-title">Course Overview</h2>
+                    
+                    <div class="overview-grid">
+                        <div>
+                            <h3>Why Learn Java Full Stack?</h3>
+                            <p>Java remains the backbone of enterprise applications worldwide. With 90% of Fortune 500 companies using Java, mastering Java Full Stack development opens doors to high-paying careers in banking, finance, e-commerce, and large-scale systems.</p>
+                            
+                            <p>This comprehensive program takes you from Java basics to advanced Spring Boot microservices. You'll learn both frontend (HTML, CSS, JavaScript) and backend (Java, Spring, Hibernate) technologies to become a complete full-stack developer.</p>
+                            
+                            <h4 style="margin-top: var(--spacing-xl); margin-bottom: var(--spacing-md);">Ideal For:</h4>
+                            <ul class="ideal-for-list">
+                                <li><i class="fas fa-check"></i> Computer Science/IT graduates seeking industry-ready skills</li>
+                                <li><i class="fas fa-check"></i> Professionals switching to software development</li>
+                                <li><i class="fas fa-check"></i> Developers wanting to upgrade to Java enterprise stack</li>
+                                <li><i class="fas fa-check"></i> College students preparing for campus placements</li>
+                                <li><i class="fas fa-check"></i> Entrepreneurs wanting to build scalable applications</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <div class="prerequisites-card">
+                                <h4><i class="fas fa-clipboard-check"></i> Prerequisites</h4>
+                                <ul class="prerequisites-list">
+                                    <li><i class="fas fa-laptop-code"></i> Basic computer knowledge</li>
+                                    <li><i class="fas fa-brain"></i> Logical thinking ability</li>
+                                    <li><i class="fas fa-graduation-cap"></i> No prior coding experience needed</li>
+                                    <li><i class="fas fa-clock"></i> 10-15 hours/week commitment</li>
+                                    <li><i class="fas fa-wifi"></i> Stable internet connection</li>
+                                </ul>
+                                <p style="margin-top: var(--spacing-md); font-size: 0.9rem; color: var(--gray-600);">
+                                    <i class="fas fa-info-circle"></i> We start from absolute basics. Complete beginners are welcome.
+                                </p>
+                            </div>
+                            
+                            <div class="prerequisites-card" style="margin-top: var(--spacing-xl);">
+                                <h4><i class="fas fa-calendar-alt"></i> Next Batch Starts</h4>
+                                <p style="font-size: 1.25rem; font-weight: 600; color: var(--primary-blue); margin-bottom: var(--spacing-sm);">15th April 2024</p>
+                                <p style="color: var(--gray-600); margin-bottom: var(--spacing-md);">Limited to 20 students per batch</p>
+                                <a href="#enroll" class="btn btn-primary" style="width: 100%;">
+                                    <i class="fas fa-user-plus"></i> Reserve Your Seat
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-3xl);">
+                        <h3 class="section-title">Skills You Will Master</h3>
+                        
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4><i class="fas fa-code"></i> Core Java</h4>
+                                <ul class="skill-list">
+                                    <li>Object-Oriented Programming</li>
+                                    <li>Collections Framework</li>
+                                    <li>Exception Handling</li>
+                                    <li>Multithreading</li>
+                                    <li>File I/O Operations</li>
+                                    <li>Java 8+ Features</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4><i class="fas fa-server"></i> Backend Development</h4>
+                                <ul class="skill-list">
+                                    <li>Spring Boot Framework</li>
+                                    <li>Spring MVC Architecture</li>
+                                    <li>Hibernate & JPA</li>
+                                    <li>REST API Development</li>
+                                    <li>Microservices</li>
+                                    <li>Spring Security</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4><i class="fas fa-database"></i> Database & DevOps</h4>
+                                <ul class="skill-list">
+                                    <li>MySQL & PostgreSQL</li>
+                                    <li>Database Design & Normalization</li>
+                                    <li>Git & GitHub</li>
+                                    <li>Docker Basics</li>
+                                    <li>AWS Deployment</li>
+                                    <li>CI/CD Pipeline</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-3xl);">
+                        <h3 class="section-title">Tools & Technologies Covered</h3>
+                        
+                        <div class="tools-grid">
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fab fa-java"></i>
+                                </div>
+                                <h4>Java 17</h4>
+                                <p>Latest Java version with modern features</p>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <h4>Spring Boot</h4>
+                                <p>Most popular Java framework</p>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <h4>MySQL</h4>
+                                <p>Industry-standard RDBMS</p>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                                <h4>React JS</h4>
+                                <p>Frontend library for modern UIs</p>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fab fa-git-alt"></i>
+                                </div>
+                                <h4>Git & GitHub</h4>
+                                <p>Version control & collaboration</p>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fab fa-docker"></i>
+                                </div>
+                                <h4>Docker</h4>
+                                <p>Containerization platform</p>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fab fa-aws"></i>
+                                </div>
+                                <h4>AWS</h4>
+                                <p>Cloud deployment & services</p>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-code-branch"></i>
+                                </div>
+                                <h4>Postman</h4>
+                                <p>API testing & development</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CURRICULUM TAB -->
+            <div id="curriculum" class="tab-content">
+                <div class="container">
+                    <h2 class="section-title">Detailed Curriculum</h2>
+                    
+                    <div class="course-structure-grid">
+                        <div>
+                            <h3>Course Structure</h3>
+                            <p>12-week intensive program with 3 phases. Each week includes 8-10 hours of live sessions, hands-on assignments, and project work.</p>
+                            
+                            <div class="structure-card">
+                                <h4><i class="fas fa-calendar-week"></i> Weekly Schedule</h4>
+                                <ul class="structure-list">
+                                    <li><strong>Monday & Wednesday:</strong> Live theory sessions (7-9 PM)</li>
+                                    <li><strong>Tuesday & Thursday:</strong> Hands-on coding labs</li>
+                                    <li><strong>Friday:</strong> Doubt resolution & project guidance</li>
+                                    <li><strong>Saturday:</strong> Weekly assignment submission</li>
+                                    <li><strong>Sunday:</strong> Optional review sessions</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="structure-card" style="margin-top: var(--spacing-xl);">
+                                <h4><i class="fas fa-chart-pie"></i> Learning Methodology</h4>
+                                <ul class="structure-list">
+                                    <li>30% Theory & Concepts</li>
+                                    <li>40% Hands-on Coding</li>
+                                    <li>20% Project Development</li>
+                                    <li>10% Interview Preparation</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3>Batch Details</h3>
+                            
+                            <div class="structure-card">
+                                <h4><i class="fas fa-users"></i> Batch Information</h4>
+                                <ul class="structure-list">
+                                    <li><strong>Batch Size:</strong> Max 20 students</li>
+                                    <li><strong>Duration:</strong> 12 weeks (3 months)</li>
+                                    <li><strong>Total Hours:</strong> 120+ live hours</li>
+                                    <li><strong>Mode:</strong> Online Live + Recordings</li>
+                                    <li><strong>Timing:</strong> 7-9 PM (Mon, Wed, Fri)</li>
+                                    <li><strong>Start Date:</strong> 15th April 2024</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-3xl);">
+                        <h3 class="section-title">Module Breakdown</h3>
+                        
+                        <div class="module-accordion">
+                            <!-- Phase 1 -->
+                            <div class="module-item">
+                                <div class="module-header">
+                                    <h5>PHASE 1: Java Foundation & OOP (Weeks 1-4)</h5>
+                                    <span class="module-duration">40 Hours</span>
+                                </div>
+                                <div class="module-content">
+                                    <h6>Learning Objectives:</h6>
+                                    <p>Master Java fundamentals, OOP principles, and build console applications.</p>
+                                    
+                                    <h6 style="margin-top: var(--spacing-lg);">Topics Covered:</h6>
+                                    <ul class="topics-list">
+                                        <li><i class="fas fa-angle-right"></i> Java Syntax & Data Types</li>
+                                        <li><i class="fas fa-angle-right"></i> Control Statements & Loops</li>
+                                        <li><i class="fas fa-angle-right"></i> Object-Oriented Programming Concepts</li>
+                                        <li><i class="fas fa-angle-right"></i> Inheritance, Polymorphism, Abstraction</li>
+                                        <li><i class="fas fa-angle-right"></i> Exception Handling</li>
+                                        <li><i class="fas fa-angle-right"></i> Collections Framework</li>
+                                        <li><i class="fas fa-angle-right"></i> Java 8 Features (Lambda, Streams)</li>
+                                        <li><i class="fas fa-angle-right"></i> Multithreading Basics</li>
+                                    </ul>
+                                    
+                                    <h6 style="margin-top: var(--spacing-lg);">Projects:</h6>
+                                    <ul class="topics-list">
+                                        <li><i class="fas fa-project-diagram"></i> Library Management System</li>
+                                        <li><i class="fas fa-project-diagram"></i> Student Grade Calculator</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Phase 2 -->
+                            <div class="module-item">
+                                <div class="module-header">
+                                    <h5>PHASE 2: Backend Development with Spring (Weeks 5-8)</h5>
+                                    <span class="module-duration">45 Hours</span>
+                                </div>
+                                <div class="module-content">
+                                    <h6>Learning Objectives:</h6>
+                                    <p>Build REST APIs, work with databases, and implement Spring Boot applications.</p>
+                                    
+                                    <h6 style="margin-top: var(--spacing-lg);">Topics Covered:</h6>
+                                    <ul class="topics-list">
+                                        <li><i class="fas fa-angle-right"></i> Spring Boot Fundamentals</li>
+                                        <li><i class="fas fa-angle-right"></i> Spring MVC Architecture</li>
+                                        <li><i class="fas fa-angle-right"></i> REST API Design & Development</li>
+                                        <li><i class="fas fa-angle-right"></i> Hibernate & JPA for Database Operations</li>
+                                        <li><i class="fas fa-angle-right"></i> MySQL Database Design</li>
+                                        <li><i class="fas fa-angle-right"></i> Spring Security & JWT Authentication</li>
+                                        <li><i class="fas fa-angle-right"></i> Unit Testing with JUnit & Mockito</li>
+                                        <li><i class="fas fa-angle-right"></i> Logging & Error Handling</li>
+                                    </ul>
+                                    
+                                    <h6 style="margin-top: var(--spacing-lg);">Projects:</h6>
+                                    <ul class="topics-list">
+                                        <li><i class="fas fa-project-diagram"></i> E-commerce Backend API</li>
+                                        <li><i class="fas fa-project-diagram"></i> Blog Management System</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Phase 3 -->
+                            <div class="module-item">
+                                <div class="module-header">
+                                    <h5>PHASE 3: Full Stack Integration & Deployment (Weeks 9-12)</h5>
+                                    <span class="module-duration">35 Hours</span>
+                                </div>
+                                <div class="module-content">
+                                    <h6>Learning Objectives:</h6>
+                                    <p>Integrate frontend with backend, learn microservices, and deploy applications.</p>
+                                    
+                                    <h6 style="margin-top: var(--spacing-lg);">Topics Covered:</h6>
+                                    <ul class="topics-list">
+                                        <li><i class="fas fa-angle-right"></i> Frontend Basics (HTML, CSS, JavaScript)</li>
+                                        <li><i class="fas fa-angle-right"></i> React JS Fundamentals</li>
+                                        <li><i class="fas fa-angle-right"></i> Spring Boot + React Integration</li>
+                                        <li><i class="fas fa-angle-right"></i> Microservices Architecture</li>
+                                        <li><i class="fas fa-angle-right"></i> Docker Containerization</li>
+                                        <li><i class="fas fa-angle-right"></i> AWS EC2 Deployment</li>
+                                        <li><i class="fas fa-angle-right"></i> CI/CD Pipeline with GitHub Actions</li>
+                                        <li><i class="fas fa-angle-right"></i> Performance Optimization</li>
+                                    </ul>
+                                    
+                                    <h6 style="margin-top: var(--spacing-lg);">Projects:</h6>
+                                    <ul class="topics-list">
+                                        <li><i class="fas fa-project-diagram"></i> Full Stack E-commerce Application</li>
+                                        <li><i class="fas fa-project-diagram"></i> Task Management System with Microservices</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECTS TAB -->
+            <div id="projects" class="tab-content">
+                <div class="container">
+                    <h2 class="section-title">Hands-On Projects</h2>
+                    <p style="margin-bottom: var(--spacing-xl);">Build a portfolio of 5+ real-world applications that demonstrate your skills to employers.</p>
+                    
+                    <div class="project-card">
+                        <h4><i class="fas fa-shopping-cart"></i> E-commerce Platform (Capstone Project)</h4>
+                        <p>A complete online shopping platform with user authentication, product catalog, shopping cart, payment integration, and order management.</p>
+                        
+                        <div class="project-features">
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Spring Boot Backend</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>React Frontend</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>MySQL Database</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>JWT Authentication</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Razorpay Payment Integration</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>AWS Deployment</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h4><i class="fas fa-blog"></i> Blog Management System</h4>
+                        <p>A content management system for creating, editing, and publishing blog posts with user roles, comments, and search functionality.</p>
+                        
+                        <div class="project-features">
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>REST API Development</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Spring Security</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>File Upload System</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Email Notifications</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h4><i class="fas fa-tasks"></i> Task Management Application</h4>
+                        <p>A productivity app for managing tasks, projects, and teams with drag-drop interface, notifications, and progress tracking.</p>
+                        
+                        <div class="project-features">
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Microservices Architecture</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>WebSocket for Real-time Updates</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Docker Containerization</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h4><i class="fas fa-university"></i> Library Management System</h4>
+                        <p>Complete system for managing library operations including book inventory, member management, borrowing, and fine calculation.</p>
+                        
+                        <div class="project-features">
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Object-Oriented Design</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>File I/O Operations</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Exception Handling</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-3xl);">
+                        <h3 class="section-title">Project Support</h3>
+                        <div class="structure-card">
+                            <h4><i class="fas fa-hands-helping"></i> How We Support Your Project Development</h4>
+                            <ul class="structure-list">
+                                <li><strong>Weekly Project Reviews:</strong> Get detailed feedback on your code</li>
+                                <li><strong>GitHub Code Reviews:</strong> Learn industry best practices</li>
+                                <li><strong>1:1 Mentorship Sessions:</strong> Personalized guidance for complex features</li>
+                                <li><strong>Deployment Support:</strong> Help with AWS, Docker deployment</li>
+                                <li><strong>Portfolio Preparation:</strong> Guidance on presenting projects to employers</li>
+                                <li><strong>Open Source Contribution:</strong> Opportunity to contribute to real projects</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CAREER TAB -->
+            <div id="career" class="tab-content">
+                <div class="container">
+                    <h2 class="section-title">Career Outcomes</h2>
+                    <p style="margin-bottom: var(--spacing-xl);">Java developers are in high demand across industries. Here's what you can achieve after completing this course.</p>
+                    
+                    <div class="job-roles-grid">
+                        <div class="job-role-card">
+                            <div class="job-role-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4>Java Developer</h4>
+                            <p>Build and maintain enterprise Java applications for banks, insurance, and large corporations.</p>
+                        </div>
+                        
+                        <div class="job-role-card">
+                            <div class="job-role-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h4>Backend Developer</h4>
+                            <p>Develop server-side logic, APIs, and database architecture for web applications.</p>
+                        </div>
+                        
+                        <div class="job-role-card">
+                            <div class="job-role-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <h4>Full Stack Developer</h4>
+                            <p>Work on both frontend and backend to build complete web applications.</p>
+                        </div>
+                        
+                        <div class="job-role-card">
+                            <div class="job-role-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h4>Spring Boot Developer</h4>
+                            <p>Specialize in Spring framework to build microservices and REST APIs.</p>
+                        </div>
+                        
+                        <div class="job-role-card">
+                            <div class="job-role-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <h4>Software Engineer</h4>
+                            <p>Design, develop, and test software solutions for various business needs.</p>
+                        </div>
+                        
+                        <div class="job-role-card">
+                            <div class="job-role-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h4>Technical Consultant</h4>
+                            <p>Advise businesses on technology solutions and implementation strategies.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="salary-info">
+                        <h3>Salary Expectations</h3>
+                        <p>Java developers command competitive salaries in the market. Here are typical ranges based on experience:</p>
+                        
+                        <div class="salary-ranges">
+                            <div class="salary-range">
+                                <div class="range-label">Fresher (0-1 years)</div>
+                                <div class="range-amount">₹4-6 LPA</div>
+                            </div>
+                            
+                            <div class="salary-range">
+                                <div class="range-label">Mid-Level (2-4 years)</div>
+                                <div class="range-amount">₹8-15 LPA</div>
+                            </div>
+                            
+                            <div class="salary-range">
+                                <div class="range-label">Senior (5+ years)</div>
+                                <div class="range-amount">₹15-30+ LPA</div>
+                            </div>
+                        </div>
+                        
+                        <p style="margin-top: var(--spacing-lg); font-size: 0.9rem; color: var(--gray-600);">
+                            <i class="fas fa-info-circle"></i> Salaries vary based on location, company size, and individual skills. These figures are indicative based on current market trends.
+                        </p>
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-3xl);">
+                        <h3 class="section-title">Our Career Support Services</h3>
+                        
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4><i class="fas fa-file-alt"></i> Resume Building</h4>
+                                <ul class="skill-list">
+                                    <li>ATS-optimized resume templates</li>
+                                    <li>Project portfolio creation</li>
+                                    <li>GitHub profile optimization</li>
+                                    <li>LinkedIn profile makeover</li>
+                                    <li>Cover letter writing</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4><i class="fas fa-comments"></i> Interview Preparation</h4>
+                                <ul class="skill-list">
+                                    <li>Mock technical interviews</li>
+                                    <li>HR interview simulations</li>
+                                    <li>Java-specific question bank</li>
+                                    <li>Problem-solving strategies</li>
+                                    <li>Communication skills training</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4><i class="fas fa-briefcase"></i> Job Search Support</h4>
+                                <ul class="skill-list">
+                                    <li>Job application strategy</li>
+                                    <li>Company research guidance</li>
+                                    <li>Networking techniques</li>
+                                    <li>Salary negotiation tips</li>
+                                    <li>Referral opportunities</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="structure-card" style="margin-top: var(--spacing-3xl);">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Important Disclaimer</h4>
+                        <p>While we provide comprehensive career support including resume building, interview preparation, and job search guidance, we do not guarantee job placement. Employment depends on market conditions, your interview performance, and individual effort. We equip you with the skills and support, but the job search effort is ultimately yours.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INSTRUCTORS TAB -->
+            <div id="instructors" class="tab-content">
+                <div class="container">
+                    <h2 class="section-title">Meet Your Instructors</h2>
+                    
+                    <div class="mentor-profiles">
+                        <div class="mentor-profile">
+                            <div class="mentor-image">
+                                <img src="../assets/images/instructors/mentor-1.svg" alt="Rajesh Kumar - Java Mentor" loading="lazy">
+                            </div>
+                            <div class="mentor-info">
+                                <h3>Rajesh Kumar</h3>
+                                <p class="mentor-title">Senior Java Developer & Lead Instructor</p>
+                                <div class="mentor-experience">
+                                    <span><i class="fas fa-briefcase"></i> 12 years industry experience</span>
+                                    <span><i class="fas fa-building"></i> Currently at TechSolutions Inc.</span>
+                                </div>
+                                <p class="mentor-bio">Rajesh has been building enterprise Java applications for over a decade. He specializes in Spring Boot microservices, cloud deployment, and system architecture. Having trained 500+ students, he brings real-world project experience to the classroom.</p>
+                                <div class="mentor-expertise">
+                                    <span class="expertise-tag">Spring Boot</span>
+                                    <span class="expertise-tag">Microservices</span>
+                                    <span class="expertise-tag">AWS</span>
+                                    <span class="expertise-tag">Docker</span>
+                                    <span class="expertise-tag">System Design</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mentor-profile">
+                            <div class="mentor-image">
+                                <img src="../assets/images/instructors/mentor-3.svg" alt="Ankit Sharma - Full Stack Mentor" loading="lazy">
+                            </div>
+                            <div class="mentor-info">
+                                <h3>Ankit Sharma</h3>
+                                <p class="mentor-title">Full Stack Developer & Mentor</p>
+                                <div class="mentor-experience">
+                                    <span><i class="fas fa-briefcase"></i> 8 years experience</span>
+                                    <span><i class="fas fa-building"></i> Previously at Infosys, Mindtree</span>
+                                </div>
+                                <p class="mentor-bio">Ankit specializes in frontend-backend integration and modern web development. He has worked on large-scale e-commerce platforms and banking applications. His teaching focuses on practical implementation and code quality.</p>
+                                <div class="mentor-expertise">
+                                    <span class="expertise-tag">React</span>
+                                    <span class="expertise-tag">JavaScript</span>
+                                    <span class="expertise-tag">REST APIs</span>
+                                    <span class="expertise-tag">Database Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-3xl);">
+                        <h3 class="section-title">Mentorship Model</h3>
+                        
+                        <div class="tools-grid">
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h4>Small Batch Size</h4>
+                                <p>Max 20 students for personalized attention</p>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <h4>Daily Doubt Support</h4>
+                                <p>Dedicated Slack channel for instant help</p>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-code-review"></i>
+                                </div>
+                                <h4>Code Reviews</h4>
+                                <p>Weekly personalized feedback on your code</p>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <h4>1:1 Sessions</h4>
+                                <p>Bi-weekly personal mentorship calls</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FEES TAB -->
+            <div id="fees" class="tab-content">
+                <div class="container">
+                    <h2 class="section-title">Fee Structure & Payment Options</h2>
+                    
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <h4>Full Payment</h4>
+                            <div class="payment-price">₹24,999</div>
+                            <p class="payment-note">One-time payment</p>
+                            
+                            <ul class="included-features">
+                                <li><i class="fas fa-check"></i> Save ₹2,000</li>
+                                <li><i class="fas fa-check"></i> Immediate access</li>
+                                <li><i class="fas fa-check"></i> All features included</li>
+                            </ul>
+                            
+                            <a href="#enroll" class="btn btn-primary" style="width: 100%;">
+                                <i class="fas fa-lock"></i> Pay Now
+                            </a>
+                        </div>
+                        
+                        <div class="payment-option featured">
+                            <div class="payment-badge">Most Popular</div>
+                            <h4>EMI Option</h4>
+                            <div class="payment-price">₹2,499/mo</div>
+                            <p class="payment-note">For 10 months (Total: ₹24,990)</p>
+                            
+                            <ul class="included-features">
+                                <li><i class="fas fa-check"></i> No cost EMI</li>
+                                <li><i class="fas fa-check"></i> Instant approval</li>
+                                <li><i class="fas fa-check"></i> All features included</li>
+                                <li><i class="fas fa-check"></i> Credit card/loan options</li>
+                            </ul>
+                            
+                            <a href="#enroll" class="btn btn-primary" style="width: 100%;">
+                                <i class="fas fa-credit-card"></i> Start EMI
+                            </a>
+                        </div>
+                        
+                        <div class="payment-option">
+                            <h4>Installment Plan</h4>
+                            <div class="payment-price">₹8,999 × 3</div>
+                            <p class="payment-note">Monthly installments</p>
+                            
+                            <ul class="included-features">
+                                <li><i class="fas fa-check"></i> 3 easy payments</li>
+                                <li><i class="fas fa-check"></i> No interest</li>
+                                <li><i class="fas fa-check"></i> All features included</li>
+                            </ul>
+                            
+                            <a href="#enroll" class="btn btn-primary" style="width: 100%;">
+                                <i class="fas fa-calendar-alt"></i> Pay in Parts
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-3xl);">
+                        <h3 class="section-title">What's Included in the Fee</h3>
+                        
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4><i class="fas fa-chalkboard-teacher"></i> Learning Resources</h4>
+                                <ul class="skill-list">
+                                    <li>120+ hours live training</li>
+                                    <li>All class recordings</li>
+                                    <li>Course notes & code samples</li>
+                                    <li>E-books & reference materials</li>
+                                    <li>Premium tool access</li>
+                                    <li>Lifetime content updates</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4><i class="fas fa-hands-helping"></i> Support & Mentorship</h4>
+                                <ul class="skill-list">
+                                    <li>1:1 doubt resolution</li>
+                                    <li>Weekly code reviews</li>
+                                    <li>Project guidance sessions</li>
+                                    <li>Career counseling</li>
+                                    <li>Interview preparation</li>
+                                    <li>6 months post-course support</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4><i class="fas fa-award"></i> Certification & Benefits</h4>
+                                <ul class="skill-list">
+                                    <li>Course completion certificate</li>
+                                    <li>Project excellence certificates</li>
+                                    <li>LinkedIn recommendation</li>
+                                    <li>Job referral program</li>
+                                    <li>Alumni community access</li>
+                                    <li>Networking events</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="structure-card" style="margin-top: var(--spacing-3xl);">
+                        <h4><i class="fas fa-shield-alt"></i> Refund Policy</h4>
+                        <p>We offer a <strong>7-day money-back guarantee</strong> from the course start date if you're not satisfied with the quality. After 7 days, refunds are processed on a case-by-case basis. Registration fee (₹1,999) is non-refundable. For complete details, please read our <a href="../legal/refund-policy.html">refund policy</a>.</p>
+                    </div>
+                    
+                    <div class="structure-card" style="margin-top: var(--spacing-xl);">
+                        <h4><i class="fas fa-graduation-cap"></i> Scholarship Program</h4>
+                        <p>We offer limited merit-based scholarships for exceptional students. To apply, submit your academic records and a statement of purpose. Scholarships cover up to 25% of course fees. <a href="../contact.html">Contact us</a> for scholarship application details.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ TAB -->
+            <div id="faq" class="tab-content">
+                <div class="container">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    
+                    <div class="module-accordion">
+                        <div class="module-item">
+                            <div class="module-header">
+                                <h5>Is this course suitable for complete beginners?</h5>
+                            </div>
+                            <div class="module-content">
+                                <p>Yes, absolutely! We start from the very basics of programming and Java. The first 4 weeks are dedicated to building a strong foundation. Many of our successful students started with zero coding experience.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="module-item">
+                            <div class="module-header">
+                                <h5>What if I miss a live class?</h5>
+                            </div>
+                            <div class="module-content">
+                                <p>All live sessions are recorded and available within 2 hours of class completion. You get lifetime access to these recordings. Additionally, you can attend the same session with another batch if available.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="module-item">
+                            <div class="module-header">
+                                <h5>Do I need a powerful computer for this course?</h5>
+                            </div>
+                            <div class="module-content">
+                                <p>A computer with 8GB RAM, i5 processor (or equivalent), and stable internet connection is recommended. For students with lower specs, we provide cloud-based coding environments.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="module-item">
+                            <div class="module-header">
+                                <h5>How much time should I dedicate weekly?</h5>
+                            </div>
+                            <div class="module-content">
+                                <p>We recommend 10-15 hours per week: 4-6 hours for live sessions and 6-9 hours for practice, assignments, and projects. Consistent daily practice yields the best results.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="module-item">
+                            <div class="module-header">
+                                <h5>Will I get certificate after completion?</h5>
+                            </div>
+                            <div class="module-content">
+                                <p>Yes, upon successful completion (80% attendance + project submission), you'll receive a verifiable certificate. You'll also get LinkedIn recommendations from instructors.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="module-item">
+                            <div class="module-header">
+                                <h5>What kind of career support do you provide?</h5>
+                            </div>
+                            <div class="module-content">
+                                <p>We provide resume building, LinkedIn optimization, mock interviews, job search strategy, and interview preparation. We also share job opportunities and provide referrals to partner companies.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="module-item">
+                            <div class="module-header">
+                                <h5>Can I switch from online to offline mode?</h5>
+                            </div>
+                            <div class="module-content">
+                                <p>Yes, you can switch between online and offline modes based on seat availability. Please notify us at least one week in advance for mode change requests.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="module-item">
+                            <div class="module-header">
+                                <h5>Do you offer placement guarantee?</h5>
+                            </div>
+                            <div class="module-content">
+                                <p>We provide comprehensive career support but do not guarantee placement. Employment depends on market conditions, your interview performance, and effort. We equip you with skills and support for job search success.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center" style="margin-top: var(--spacing-3xl);">
+                        <p>Have more questions? <a href="../contact.html" class="btn btn-primary">
+                            <i class="fas fa-question-circle"></i> Contact Our Counselors
+                        </a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FINAL ENROLLMENT CTA -->
+        <section id="enroll" class="final-cta-course">
+            <div class="container">
+                <div class="cta-course-content">
+                    <h2>Ready to Start Your Java Developer Journey?</h2>
+                    <p>Join our next batch starting on <strong>4th January 2026</strong>. Limited seats available for personalized attention.</p>
+                    
+                    <div class="cta-course-actions">
+                        <a href="../contact.html#counseling" class="btn btn-primary btn-xlarge">
+                            <i class="fas fa-calendar-check"></i> Book Free Demo Class
+                        </a>
+                        <a href="tel:+91 8885570870" class="btn btn-secondary btn-xlarge">
+                            <i class="fas fa-phone-alt"></i> Call for Admission
+                        </a>
+                        <a href="https://wa.me/911234567890?text=I'm interested in Java Full Stack course" class="btn btn-whatsapp btn-xlarge" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                    
+                    <p style="margin-top: var(--spacing-xl); opacity: 0.8; font-size: 0.9rem;">
+                        <i class="fas fa-shield-alt"></i> 7-Day Money Back Guarantee | <i class="fas fa-user-graduate"></i> Max 20 Students/Batch | <i class="fas fa-certificate"></i> Verified Certificate
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Include -->
+    <div id="footer-placeholder"></div>
+
+    <!-- CTA Banner Include -->
+    <div id="cta-banner-placeholder"></div>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load header
+            fetch('../includes/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                    initializeMobileMenu();
+                    if (typeof fixRootRelativePaths === 'function') fixRootRelativePaths();
+                });
+            
+            // Load footer
+            fetch('../includes/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                    if (typeof fixRootRelativePaths === 'function') fixRootRelativePaths();
+                });
+            
+            // Load CTA banner
+            fetch('../includes/cta-banner.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('cta-banner-placeholder').innerHTML = data;
+                    if (typeof fixRootRelativePaths === 'function') fixRootRelativePaths();
+                });
+            
+            // Course tabs functionality
+            const courseTabs = document.querySelectorAll('.course-tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            courseTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all tabs and contents
+                    courseTabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding content
+                    this.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                    
+                    // Scroll to top of content
+                    document.querySelector('.course-content').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            });
+            
+            // Module accordion functionality
+            const moduleHeaders = document.querySelectorAll('.module-header');
+            
+            moduleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const isActive = content.classList.contains('active');
+                    
+                    // Close all other modules
+                    document.querySelectorAll('.module-content').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Toggle current module
+                    if (!isActive) {
+                        content.classList.add('active');
+                    }
+                });
+            });
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        
+                        if (href === '#enroll') {
+                            // Scroll to enroll section
+                            window.scrollTo({
+                                top: target.offsetTop,
+                                behavior: 'smooth'
+                            });
+                        } else if (href.startsWith('#') && href.length > 1) {
+                            // Switch to corresponding tab
+                            const tabId = href.substring(1);
+                            const tabButton = document.querySelector(`.course-tab[data-tab="${tabId}"]`);
+                            
+                            if (tabButton) {
+                                tabButton.click();
+                            }
+                        }
+                    }
+                });
+            });
+            
+            // Initialize tooltips for course features
+            const tooltips = document.querySelectorAll('.tool-card, .job-role-card');
+            tooltips.forEach(tooltip => {
+                tooltip.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                    this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.1)';
+                });
+                
+                tooltip.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                });
+            });
+            
+            // Enrollment form simulation (would be connected to backend in production)
+            const enrollButtons = document.querySelectorAll('a[href="#enroll"]');
+            enrollButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#enroll') {
+                        e.preventDefault();
+                        
+                        // Show enrollment modal or redirect to enrollment page
+                        // For now, just scroll to enroll section
+                        const enrollSection = document.getElementById('enroll');
+                        if (enrollSection) {
+                            window.scrollTo({
+                                top: enrollSection.offsetTop,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

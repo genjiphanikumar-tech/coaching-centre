@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Programming Roadmap</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <main class="container">
+    <h1>Programming Roadmap</h1>
+    <ol>
+      <li>Foundational Languages</li>
+      <li>Data Structures & Algorithms</li>
+      <li>System Design & Best Practices</li>
+    </ol>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    fetch('../includes/header.html').then(r=>r.text()).then(t=>{document.getElementById('header-placeholder').innerHTML=t; if(window.fixRootRelativePaths) window.fixRootRelativePaths();});
+    fetch('../includes/footer.html').then(r=>r.text()).then(t=>{document.getElementById('footer-placeholder').innerHTML=t; if(window.fixRootRelativePaths) window.fixRootRelativePaths();});
+  </script>
+</body>
+</html>
